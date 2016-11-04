@@ -13,6 +13,6 @@ namespace MeramecNetFlixProject
         //use the prop insert code snippet shortcut to define your class properties
         //example prop and press the tab twice
         
-        
+        //I am a new comment
     }
 }
