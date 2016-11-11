@@ -17,5 +17,20 @@ namespace MeramecNetFlixProject
             InitializeComponent();
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            rdoActive.Checked = false;
+            rdoInactive.Checked = false;
+            rdoEmail.Checked = false;
+            rdoFaceBook.Checked = false;
+            rdoPhoneText.Checked = false;
+            rdoTwitter.Checked = false;
+
+        }
     }
 }
