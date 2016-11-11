@@ -48,6 +48,18 @@
     <Compile Include="Data Access Layer\AccessDataSQLServer.cs" />
     <Compile Include="Business Objects\MyCustomObject.cs" />
     <Compile Include="Data Access Layer\SkeletonTableNameDB.cs" />
+    <Compile Include="MemberDataEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberDataEntry.Designer.cs">
+      <DependentUpon>MemberDataEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignInScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignInScreen.Designer.cs">
+      <DependentUpon>SignInScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +68,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MemberDataEntry.resx">
+      <DependentUpon>MemberDataEntry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -65,6 +80,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SignInScreen.resx">
+      <DependentUpon>SignInScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,7 +105,12 @@
     <Content Include="ProjectFileReadMe.txt" />
     <Content Include="UI\ReadMe.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MeramecNetFlixComponentProject\MeramecNetFlixComponentProject.csproj">
+      <Project>{80459640-1e30-4f24-a12f-3f464f24d9b6}</Project>
+      <Name>MeramecNetFlixComponentProject</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
