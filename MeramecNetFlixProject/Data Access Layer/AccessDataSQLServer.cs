@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-//The System.Data.SqlClient reference is needed to access SQL Server database
-using System.Data.SqlClient;
+﻿//The System.Data.SqlClient reference is needed to access SQL Server database
 
-namespace MeramecNetFlixProject
+namespace MeramecNetFlixProject.Data_Access_Layer
 {
     public class AccessDataSQLServer
     {
