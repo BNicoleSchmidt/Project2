@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-namespace MeramecNetFlixProject
+namespace MeramecNetFlixProject.UI
 {
-    public partial class Form1 : Form
+    public partial class SignInPage : Form
     {
-        public Form1()
+        public SignInPage()
         {
             InitializeComponent();
-            
         }
     }
 }

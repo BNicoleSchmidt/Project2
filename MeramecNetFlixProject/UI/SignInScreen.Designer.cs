@@ -111,6 +111,7 @@
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "SignInScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meramec On-Line Kiosk Movie Rental System(UI Design Ideas)";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

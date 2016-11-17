@@ -65,14 +65,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnBrowse = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.btnMemberAdd = new System.Windows.Forms.Button();
+            this.btnMemberBrowse = new System.Windows.Forms.Button();
+            this.btnMemberUpdate = new System.Windows.Forms.Button();
+            this.btnMemberDelete = new System.Windows.Forms.Button();
+            this.btnMemberClear = new System.Windows.Forms.Button();
+            this.btnMemberExit = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -407,67 +407,67 @@
             this.dataGridView1.Size = new System.Drawing.Size(895, 107);
             this.dataGridView1.TabIndex = 7;
             // 
-            // btnAdd
+            // btnMemberAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(28, 426);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(139, 43);
-            this.btnAdd.TabIndex = 8;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnMemberAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemberAdd.Location = new System.Drawing.Point(28, 426);
+            this.btnMemberAdd.Name = "btnMemberAdd";
+            this.btnMemberAdd.Size = new System.Drawing.Size(139, 43);
+            this.btnMemberAdd.TabIndex = 8;
+            this.btnMemberAdd.Text = "Add";
+            this.btnMemberAdd.UseVisualStyleBackColor = true;
             // 
-            // btnBrowse
+            // btnMemberBrowse
             // 
-            this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.Location = new System.Drawing.Point(173, 426);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(139, 43);
-            this.btnBrowse.TabIndex = 8;
-            this.btnBrowse.Text = "Browse";
-            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnMemberBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemberBrowse.Location = new System.Drawing.Point(173, 426);
+            this.btnMemberBrowse.Name = "btnMemberBrowse";
+            this.btnMemberBrowse.Size = new System.Drawing.Size(139, 43);
+            this.btnMemberBrowse.TabIndex = 8;
+            this.btnMemberBrowse.Text = "Browse";
+            this.btnMemberBrowse.UseVisualStyleBackColor = true;
             // 
-            // btnUpdate
+            // btnMemberUpdate
             // 
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(318, 426);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(139, 43);
-            this.btnUpdate.TabIndex = 8;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnMemberUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemberUpdate.Location = new System.Drawing.Point(318, 426);
+            this.btnMemberUpdate.Name = "btnMemberUpdate";
+            this.btnMemberUpdate.Size = new System.Drawing.Size(139, 43);
+            this.btnMemberUpdate.TabIndex = 8;
+            this.btnMemberUpdate.Text = "Update";
+            this.btnMemberUpdate.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
+            // btnMemberDelete
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(463, 426);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(139, 43);
-            this.btnDelete.TabIndex = 8;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnMemberDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemberDelete.Location = new System.Drawing.Point(463, 426);
+            this.btnMemberDelete.Name = "btnMemberDelete";
+            this.btnMemberDelete.Size = new System.Drawing.Size(139, 43);
+            this.btnMemberDelete.TabIndex = 8;
+            this.btnMemberDelete.Text = "Delete";
+            this.btnMemberDelete.UseVisualStyleBackColor = true;
             // 
-            // btnClear
+            // btnMemberClear
             // 
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(608, 426);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(139, 43);
-            this.btnClear.TabIndex = 8;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnMemberClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemberClear.Location = new System.Drawing.Point(608, 426);
+            this.btnMemberClear.Name = "btnMemberClear";
+            this.btnMemberClear.Size = new System.Drawing.Size(139, 43);
+            this.btnMemberClear.TabIndex = 8;
+            this.btnMemberClear.Text = "Clear";
+            this.btnMemberClear.UseVisualStyleBackColor = true;
+            this.btnMemberClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btnExit
+            // btnMemberExit
             // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(753, 426);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(139, 43);
-            this.btnExit.TabIndex = 8;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnMemberExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemberExit.Location = new System.Drawing.Point(753, 426);
+            this.btnMemberExit.Name = "btnMemberExit";
+            this.btnMemberExit.Size = new System.Drawing.Size(139, 43);
+            this.btnMemberExit.TabIndex = 8;
+            this.btnMemberExit.Text = "Exit";
+            this.btnMemberExit.UseVisualStyleBackColor = true;
+            this.btnMemberExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // label14
             // 
@@ -478,30 +478,30 @@
             this.label14.TabIndex = 2;
             this.label14.Text = "Password:";
             // 
-            // textBox1
+            // txtPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(664, 237);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.txtPassword.Location = new System.Drawing.Point(664, 237);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(142, 20);
+            this.txtPassword.TabIndex = 3;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // MemberDataEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 490);
-            this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnBrowse);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnMemberExit);
+            this.Controls.Add(this.btnMemberClear);
+            this.Controls.Add(this.btnMemberDelete);
+            this.Controls.Add(this.btnMemberUpdate);
+            this.Controls.Add(this.btnMemberBrowse);
+            this.Controls.Add(this.btnMemberAdd);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnUplaodProfileImage);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtConfirmPassword);
             this.Controls.Add(this.txtLoginName);
             this.Controls.Add(this.textBox10);
@@ -530,6 +530,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "MemberDataEntry";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MemberDataEntry";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -580,13 +581,13 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnBrowse;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnMemberAdd;
+        private System.Windows.Forms.Button btnMemberBrowse;
+        private System.Windows.Forms.Button btnMemberUpdate;
+        private System.Windows.Forms.Button btnMemberDelete;
+        private System.Windows.Forms.Button btnMemberClear;
+        private System.Windows.Forms.Button btnMemberExit;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPassword;
     }
 }

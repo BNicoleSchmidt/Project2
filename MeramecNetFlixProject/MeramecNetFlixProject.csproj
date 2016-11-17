@@ -48,27 +48,39 @@
     <Compile Include="Data Access Layer\AccessDataSQLServer.cs" />
     <Compile Include="Business Objects\MyCustomObject.cs" />
     <Compile Include="Data Access Layer\SkeletonTableNameDB.cs" />
-    <Compile Include="MemberDataEntry.cs">
+    <Compile Include="UI\MemberDataEntry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MemberDataEntry.Designer.cs">
+    <Compile Include="UI\MemberDataEntry.Designer.cs">
       <DependentUpon>MemberDataEntry.cs</DependentUpon>
     </Compile>
-    <Compile Include="SignInScreen.cs">
+    <Compile Include="UI\MovieForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignInScreen.Designer.cs">
+    <Compile Include="UI\MovieForm.Designer.cs">
+      <DependentUpon>MovieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SignInPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SignInPage.Designer.cs">
+      <DependentUpon>SignInPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SignInScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SignInScreen.Designer.cs">
       <DependentUpon>SignInScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Form1.cs">
+    <Compile Include="UI\GenreForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UI\GenreForm.Designer.cs">
+      <DependentUpon>GenreForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MemberDataEntry.resx">
+    <EmbeddedResource Include="UI\MemberDataEntry.resx">
       <DependentUpon>MemberDataEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -80,11 +92,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SignInScreen.resx">
+    <EmbeddedResource Include="UI\MovieForm.resx">
+      <DependentUpon>MovieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SignInPage.resx">
+      <DependentUpon>SignInPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SignInScreen.resx">
       <DependentUpon>SignInScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="UI\GenreForm.resx">
+      <DependentUpon>GenreForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
