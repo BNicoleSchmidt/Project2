@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeramecNetFlixProject", "MeramecNetFlixProject\MeramecNetFlixProject.csproj", "{A798CCB2-0E60-40FB-B92E-7F06AD63342A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeramecNetFlixComponentProject", "MeramecNetFlixComponentProject\MeramecNetFlixComponentProject.csproj", "{80459640-1E30-4F24-A12F-3F464F24D9B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeramecNetFlixProject.UnitTest", "MeramecNetFlixProject.UnitTest\MeramecNetFlixProject.UnitTest.csproj", "{C8C1A4EB-F822-446D-B77F-8150F58BCCCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{80459640-1E30-4F24-A12F-3F464F24D9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80459640-1E30-4F24-A12F-3F464F24D9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80459640-1E30-4F24-A12F-3F464F24D9B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8C1A4EB-F822-446D-B77F-8150F58BCCCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8C1A4EB-F822-446D-B77F-8150F58BCCCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8C1A4EB-F822-446D-B77F-8150F58BCCCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8C1A4EB-F822-446D-B77F-8150F58BCCCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
