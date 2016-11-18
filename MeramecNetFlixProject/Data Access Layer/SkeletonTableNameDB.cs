@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MeramecNetFlixProject.Business_Objects;
 //The System.Data.SqlClient reference is needed to access SQL Server database
-using System.Data.SqlClient;
 
-namespace MeramecNetFlixProject
+namespace MeramecNetFlixProject.Data_Access_Layer
 {
     //Instructions:
     //#1:Rename the SkeletonTableNameDB class to the Specific Database Table name. i.e. CustomerDB
