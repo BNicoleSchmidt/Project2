@@ -48,7 +48,7 @@
     <Compile Include="Data Access Layer\AccessDataSQLServer.cs" />
     <Compile Include="Business Objects\MyCustomObject.cs" />
     <Compile Include="Data Access Layer\SkeletonTableNameDB.cs" />
-    <Compile Include="Services\CustomerService.cs" />
+    <Compile Include="Services\MemberService.cs" />
     <Compile Include="UI\MemberDataEntry.cs">
       <SubType>Form</SubType>
     </Compile>

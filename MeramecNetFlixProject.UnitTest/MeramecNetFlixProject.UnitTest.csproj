@@ -64,7 +64,7 @@
   <ItemGroup>
     <Compile Include="BaseFixture.cs" />
     <Compile Include="RandomTester.cs" />
-    <Compile Include="Services\CustomerServiceFixture.cs" />
+    <Compile Include="Services\MemberServiceFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

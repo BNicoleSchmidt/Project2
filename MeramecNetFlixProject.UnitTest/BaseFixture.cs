@@ -1,8 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace MeramecNetFlixProject.UnitTest
+﻿namespace MeramecNetFlixProject.UnitTest
 {
-    [TestClass]
     public class BaseFixture
     {
         public RandomTester Random;

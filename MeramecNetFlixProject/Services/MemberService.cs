@@ -1,6 +1,6 @@
 ﻿namespace MeramecNetFlixProject.Services
 {
-    public class CustomerService
+    public class MemberService
     {
         public bool ValidateLogin(string username, string password)
         {
