@@ -1,59 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using MeramecNetFlixProject.Business_Objects;
-//The System.Data.SqlClient reference is needed to access SQL Server database
 
 namespace MeramecNetFlixProject.Data_Access_Layer
 {
     // ReSharper disable once InconsistentNaming
     public class MemberDB : AccessDataSQLServer
     {
-        
-        //Instructions: 
-        //Replace all ???TableNameHere phrases with the name of your specific SQL Server Database Table Name
-        //Replace yourCustomeObject phrase with the name of the business object (represents database table name) you are referencing or returning
-        //Replace datatype phrase with the appropriate C# data type or custom data type based on Project #2 CRUD specs
-        //Replace parameter phrase with the appropriate input parameter based on Project #2 CRUD specs
-        //Refer to the ADO.Net Demo for method examples below
-        
-        
         public List<Member> GetMembers()
         {
-            //Change the MyCustomObject name to your customer business object that is returning data from the specific table
-            List<Member> objTemp = new List<Member>();
-            string SQLStatement = String.Empty;
-
-            //Step #1: Add code to call the appropriate method from the inherited AccessDataSQLServer class
-            //To return a database connection object
-
-            //Step #2: Code Logic to create appropriate SQL Server objects calls
-            //         Code Logic to retrieve data from database
-            //         Add Try..Catch appropriate block and throw exception back to calling program
-
-            //Step #3: Return the objtemp generic list variable  back to the calling UI 
-            
-            return objTemp;
+            const string sqlStatement = @"Select * from Member";
+            var rawData = Query(sqlStatement);
+            var members = new List<Member>();
+            foreach (var item in rawData)
+            {
+                var member = MapMember(item);
+                members.Add(member);
+            }
+            return members;
         }
       
                
-        public Member GetMember(object Parameter)
+        public Member GetMember(string loginName)
         {
-            //Pre-step: Replace the general object parameter with the appropriate data type parameter for retrieving a specific item from the specific database table. 
-            string SQLStatement = String.Empty;
-
-            //Change the MyCustomObject references  to your customer business object
-            Member objTemp = new Member();
-           
-
-            //Step #1: Add code to call the appropriate method from the inherited AccessDataSQLServer class
-            //To return a database connection object
-
-            //Step #2: Code logic to create appropriate SQL Server objects calls
-            //         Code logic to retrieve data from database
-            //         Add Try..Catch appropriate block and throw exception back to calling program            
-
-            //Step #3: Return the objtemp variable back to the calling UI 
-            return objTemp;
+            string sqlStatement = "Select * from Member where login_name = '" + loginName + "'";
+            var rawData = Query(sqlStatement);
+            if (rawData.Count < 1)
+            {
+                throw new Exception("Member not found");
+            }
+            var item = rawData.First();
+            return MapMember(item);
         }
 
         public bool AddMember(object Parameter)
@@ -110,5 +88,28 @@ namespace MeramecNetFlixProject.Data_Access_Layer
             return true; //temporary return until your code is fully flushed out. Remove or comment out this line
         }
 
+        private static Member MapMember(object[] item)
+        {
+            return new Member
+            {
+                Number = int.Parse(item[0].ToString()),
+                JoinDate = (DateTime)item[1],
+                FirstName = item[2].ToString().TrimEnd(),
+                LastName = item[3].ToString().TrimEnd(),
+                Address = item[4].ToString().TrimEnd(),
+                City = item[5].ToString().TrimEnd(),
+                State = item[6].ToString(),
+                Zipcode = int.Parse(item[7].ToString()),
+                Phone = item[8].ToString().TrimEnd(),
+                MemberStatus = item[9].ToString(),
+                LoginName = item[10].ToString().TrimEnd(),
+                Password = item[11].ToString().TrimEnd(),
+                Email = item[12].ToString().TrimEnd(),
+                ContactMethod = int.Parse(item[13].ToString()),
+                SubscriptionId = int.Parse(item[14].ToString()),
+                Photo = item[15].ToString().TrimEnd(),
+                IsAdmin = (bool)item[16]
+            };
+        }
     }
 }

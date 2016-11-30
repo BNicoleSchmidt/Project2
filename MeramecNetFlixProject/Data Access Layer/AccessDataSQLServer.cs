@@ -16,8 +16,8 @@ namespace MeramecNetFlixProject.Data_Access_Layer
         {
             //198.209.220.125 Teamc teamc
         }
-        
-        private List<object[]> Get(string query)
+
+        public List<object[]> Query(string query)
         {
             var cnn = new SqlConnection(ConnectionString);
             try

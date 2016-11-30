@@ -12,7 +12,7 @@ namespace MeramecNetFlixProject.Business_Objects
         public string City { get; set; }
         public string State { get; set; }
         public int Zipcode { get; set; }
-        public int Phone { get; set; }
+        public string Phone { get; set; }
         public string MemberStatus { get; set; }
         public string LoginName { get; set; }
         public string Password { get; set; }

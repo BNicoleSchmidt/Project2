@@ -45,9 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Objects\ContactMethod.cs" />
     <Compile Include="Data Access Layer\AccessDataSQLServer.cs" />
-    <Compile Include="Business Objects\MyCustomObject.cs" />
-    <Compile Include="Data Access Layer\SkeletonTableNameDB.cs" />
+    <Compile Include="Business Objects\Member.cs" />
+    <Compile Include="Data Access Layer\MemberDB.cs" />
     <Compile Include="Services\MemberService.cs" />
     <Compile Include="UI\MemberDataEntry.cs">
       <SubType>Form</SubType>
