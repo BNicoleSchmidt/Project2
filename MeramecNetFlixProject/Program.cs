@@ -17,8 +17,6 @@ namespace MeramecNetFlixProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var thing = new AccessDataSQLServer();
-            thing.TestConnection();
             Application.Run(new Genre());
         }
     }
