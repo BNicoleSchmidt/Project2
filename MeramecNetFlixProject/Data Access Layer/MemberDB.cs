@@ -5,12 +5,8 @@ using MeramecNetFlixProject.Business_Objects;
 
 namespace MeramecNetFlixProject.Data_Access_Layer
 {
-    //Instructions:
-    //#1:Rename the SkeletonTableNameDB class to the Specific Database Table name. i.e. CustomerDB
-    //#2:The SkeletonTableNameDB class should inherit the superclass called AccessDataSQLServer
-    //#3: The AccessDataSQLServer class must be created. See Project#2 Specs for class definition.
-
-    public class SkeletonTableNameDB : AccessDataSQLServer
+    // ReSharper disable once InconsistentNaming
+    public class MemberDB : AccessDataSQLServer
     {
         
         //Instructions: 
@@ -21,10 +17,10 @@ namespace MeramecNetFlixProject.Data_Access_Layer
         //Refer to the ADO.Net Demo for method examples below
         
         
-        public List<MyCustomObject> GetTableNameHeres()
+        public List<Member> GetMembers()
         {
             //Change the MyCustomObject name to your customer business object that is returning data from the specific table
-            List<MyCustomObject> objTemp = new List<MyCustomObject>();
+            List<Member> objTemp = new List<Member>();
             string SQLStatement = String.Empty;
 
             //Step #1: Add code to call the appropriate method from the inherited AccessDataSQLServer class
@@ -40,13 +36,13 @@ namespace MeramecNetFlixProject.Data_Access_Layer
         }
       
                
-        public MyCustomObject GetTableNameHere(object Parameter)
+        public Member GetMember(object Parameter)
         {
             //Pre-step: Replace the general object parameter with the appropriate data type parameter for retrieving a specific item from the specific database table. 
             string SQLStatement = String.Empty;
 
             //Change the MyCustomObject references  to your customer business object
-            MyCustomObject objTemp = new MyCustomObject();
+            Member objTemp = new Member();
            
 
             //Step #1: Add code to call the appropriate method from the inherited AccessDataSQLServer class
@@ -60,7 +56,7 @@ namespace MeramecNetFlixProject.Data_Access_Layer
             return objTemp;
         }
 
-        public bool AddTableNameHere(object Parameter)
+        public bool AddMember(object Parameter)
         {
             //Pre-step: Replace the general object parameter with the appropriate business class object that you are using to insert data in the underline database table 
             string SQLStatement = String.Empty;
@@ -78,7 +74,7 @@ namespace MeramecNetFlixProject.Data_Access_Layer
             return true; //temporary return until your code is fully flushed out. Remove or comment out this line
         }
 
-        public bool UpdateTableNameHere(object Parameter)
+        public bool UpdateMember(object Parameter)
         {
             //Pre-step: Replace the general object parameter with the appropriate business class object that you are using to update the underline database table. 
             string SQLStatement = String.Empty;
@@ -96,7 +92,7 @@ namespace MeramecNetFlixProject.Data_Access_Layer
             return true; //temporary return until your code is fully flushed out. Remove or comment out this line
         }
 
-        public bool DeleteTableNameHere(object Parameter)
+        public bool DeleteMember(object Parameter)
         {
             //Pre-step: Replace the general object parameter with the appropriate business class object that you are using to delete from the underline database table.
             string SQLStatement = String.Empty;
