@@ -20,15 +20,18 @@ namespace MeramecNetFlixProject.Data_Access_Layer
             }
             return members;
         }
-      
-               
+
         public Member GetMember(string loginName)
         {
-            string sqlStatement = "Select * from Member where login_name = '" + loginName + "'";
+            var sqlStatement = "Select * from Member where login_name = '" + loginName + "'";
             var rawData = Query(sqlStatement);
             if (rawData.Count < 1)
             {
                 throw new Exception("Member not found");
+            }
+            if (rawData.Count > 1)
+            {
+                throw new Exception("Duplicate members found");
             }
             var item = rawData.First();
             return MapMember(item);
