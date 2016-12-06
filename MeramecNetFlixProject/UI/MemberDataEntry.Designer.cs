@@ -182,9 +182,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Memeber Number:";
+            this.label1.Text = "Member Number:";
             // 
             // txtMemberNumber
             // 
@@ -337,7 +337,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(286, 218);
+            this.label9.Location = new System.Drawing.Point(286, 214);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 2;
@@ -402,6 +402,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Enabled = false;
             this.dataGridView1.Location = new System.Drawing.Point(13, 302);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(895, 107);
@@ -419,6 +420,7 @@
             // 
             // btnMemberBrowse
             // 
+            this.btnMemberBrowse.Enabled = false;
             this.btnMemberBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMemberBrowse.Location = new System.Drawing.Point(173, 426);
             this.btnMemberBrowse.Name = "btnMemberBrowse";
@@ -429,6 +431,7 @@
             // 
             // btnMemberUpdate
             // 
+            this.btnMemberUpdate.Enabled = false;
             this.btnMemberUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMemberUpdate.Location = new System.Drawing.Point(318, 426);
             this.btnMemberUpdate.Name = "btnMemberUpdate";
@@ -439,6 +442,7 @@
             // 
             // btnMemberDelete
             // 
+            this.btnMemberDelete.Enabled = false;
             this.btnMemberDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMemberDelete.Location = new System.Drawing.Point(463, 426);
             this.btnMemberDelete.Name = "btnMemberDelete";

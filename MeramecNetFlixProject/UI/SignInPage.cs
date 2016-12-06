@@ -14,7 +14,18 @@ namespace MeramecNetFlixProject.UI
     {
         public SignInPage()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MemberDataEntry myMemeber = new MemberDataEntry();
+            myMemeber.ShowDialog();
+        }
+
+        private void btnSignInCancle_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
