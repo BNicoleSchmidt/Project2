@@ -11,7 +11,7 @@ namespace MeramecNetFlixProject.Data_Access_Layer
         public List<Member> GetMembers()
         {
             const string sqlStatement = @"Select * from Member";
-            var rawData = Query(sqlStatement);
+            var rawData = GetQuery(sqlStatement);
             var members = new List<Member>();
             foreach (var item in rawData)
             {
@@ -24,7 +24,7 @@ namespace MeramecNetFlixProject.Data_Access_Layer
         public Member GetMember(string loginName)
         {
             var sqlStatement = "Select * from Member where login_name = '" + loginName + "'";
-            var rawData = Query(sqlStatement);
+            var rawData = GetQuery(sqlStatement);
             if (rawData.Count < 1)
             {
                 throw new Exception("Member not found");
@@ -95,7 +95,7 @@ namespace MeramecNetFlixProject.Data_Access_Layer
         {
             return new Member
             {
-                Number = int.Parse(item[0].ToString()),
+                Id = int.Parse(item[0].ToString()),
                 JoinDate = (DateTime)item[1],
                 FirstName = item[2].ToString().TrimEnd(),
                 LastName = item[3].ToString().TrimEnd(),

@@ -12,12 +12,7 @@ namespace MeramecNetFlixProject.Data_Access_Layer
     {
         private const string ConnectionString = "Data Source=198.209.220.125;Initial Catalog=Teamc;User ID=teamc;Password=teamc";
 
-        public AccessDataSQLServer()
-        {
-            //198.209.220.125 Teamc teamc
-        }
-
-        public List<object[]> Query(string query)
+        public List<object[]> GetQuery(string query)
         {
             var cnn = new SqlConnection(ConnectionString);
             try
@@ -43,6 +38,12 @@ namespace MeramecNetFlixProject.Data_Access_Layer
                 MessageBox.Show(@"SQL Exception: " + ex.Message);
                 return new List<object[]>();
             }
+        }
+
+        public int AddQuery(string query)
+        {
+
+            return 0;
         }
     }
 
