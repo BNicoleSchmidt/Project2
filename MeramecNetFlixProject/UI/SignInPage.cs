@@ -27,5 +27,10 @@ namespace MeramecNetFlixProject.UI
         {
             Close();
         }
+
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
