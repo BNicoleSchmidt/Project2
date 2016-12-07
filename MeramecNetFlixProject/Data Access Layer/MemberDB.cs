@@ -37,25 +37,15 @@ namespace MeramecNetFlixProject.Data_Access_Layer
             return MapMember(item);
         }
 
-        public bool AddMember(object Parameter)
-        {
-            //Pre-step: Replace the general object parameter with the appropriate business class object that you are using to insert data in the underline database table 
-            string SQLStatement = String.Empty;
-
-            //Step #1: Add code to call the appropriate method from the inherited AccessDataSQLServer class
-            //To return a database connection object
-
-            //Step #2: Code logic to create appropriate SQL Server objects calls
-            //         Cod Logic to retrieve data from database
-            //         Add Try..Catch appropriate block and throw exception back to calling program
-            
-            //Step #3: return false if record was not added successfully
-            //         return true if record was added successfully  
-            
-            return true; //temporary return until your code is fully flushed out. Remove or comment out this line
+        public bool AddMember(Member member)
+        { 
+            var sqlStatement = "Insert into Member (joindate, firstname, lastname, address, city, state, zipcode, phone, member_status, login_name, password, email, contact_method, subscription_id, photo, is_admin) values ('" +
+                member.JoinDate + "', '" + member.FirstName + "', '" + member.LastName + "', '" + member.Address + "', '" + member.City + "', '" + member.State + "', '" + member.Zipcode + "', '" + member.Phone + "', '" + member.MemberStatus + "', '" + 
+                member.LoginName + "', '" + member.Password + "', '" + member.Email + "', " + member.ContactMethod + ", " + member.SubscriptionId + ", '" + member.Photo + "', '" + member.IsAdmin + "')";
+            return AddQuery(sqlStatement);
         }
 
-        public bool UpdateMember(object Parameter)
+        public bool UpdateMember(object parameter)
         {
             //Pre-step: Replace the general object parameter with the appropriate business class object that you are using to update the underline database table. 
             string SQLStatement = String.Empty;
@@ -76,7 +66,7 @@ namespace MeramecNetFlixProject.Data_Access_Layer
         public bool DeleteMember(object Parameter)
         {
             //Pre-step: Replace the general object parameter with the appropriate business class object that you are using to delete from the underline database table.
-            string SQLStatement = String.Empty;
+            var SQLStatement = string.Empty;
 
             //Step# 1: Add code to call the appropriate method from the inherited AccessDataSQLServer class
             //To return a database connection object

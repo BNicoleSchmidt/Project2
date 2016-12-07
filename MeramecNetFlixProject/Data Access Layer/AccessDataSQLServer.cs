@@ -1,6 +1,4 @@
-﻿//The System.Data.SqlClient reference is needed to access SQL Server database
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -14,38 +12,56 @@ namespace MeramecNetFlixProject.Data_Access_Layer
 
         public List<object[]> GetQuery(string query)
         {
-            var cnn = new SqlConnection(ConnectionString);
-            try
+            using (var cnn = new SqlConnection(ConnectionString))
             {
-                cnn.Open();
-                var com = new SqlCommand(query, cnn);
-                var reader = com.ExecuteReader();
-                var rows = new List<object[]>();
-                if (reader.HasRows)
+                try
                 {
-                    while (reader.Read())
+                    using (var com = new SqlCommand(query, cnn))
                     {
-                        var values = new object[reader.FieldCount];
-                        reader.GetValues(values);
-                        rows.Add(values);
+                        cnn.Open();
+                        var reader = com.ExecuteReader();
+                        var rows = new List<object[]>();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                var values = new object[reader.FieldCount];
+                                reader.GetValues(values);
+                                rows.Add(values);
+                            }
+                        }
+                        reader.Close();
+                        return rows;
                     }
                 }
-                reader.Close();
-                return rows;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(@"SQL Exception: " + ex.Message);
-                return new List<object[]>();
+                catch (Exception ex)
+                {
+                    MessageBox.Show(@"SQL Exception: " + ex.Message);
+                    return new List<object[]>();
+                }
             }
         }
 
-        public int AddQuery(string query)
+        public bool AddQuery(string query)
         {
-
-            return 0;
+            using (var cnn = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    using (var com = new SqlCommand(query, cnn))
+                    {
+                        cnn.Open();
+                        var result = com.ExecuteNonQuery();
+                        cnn.Close();
+                        return result > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(@"SQL Exception: " + ex.Message);
+                    return false;
+                }
+            }
         }
     }
-
-   
 }
