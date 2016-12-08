@@ -50,6 +50,8 @@
     <Compile Include="Business Objects\Member.cs" />
     <Compile Include="Business Objects\Movie.cs" />
     <Compile Include="Data Access Layer\MemberDB.cs" />
+    <Compile Include="Exceptions\DuplicateEntryException.cs" />
+    <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Services\MemberService.cs" />
     <Compile Include="UI\AdminSignIn.cs">
       <SubType>Form</SubType>
