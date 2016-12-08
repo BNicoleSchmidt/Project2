@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using MeramecNetFlixProject.Business_Objects;
 
@@ -11,41 +12,66 @@ namespace MeramecNetFlixProject.Data_Access_Layer
         public List<Member> GetMembers()
         {
             const string sqlStatement = @"Select * from Member";
-            var rawData = GetQuery(sqlStatement);
-            var members = new List<Member>();
-            foreach (var item in rawData)
+            using (var com = new SqlCommand(sqlStatement))
             {
-                var member = MapMember(item);
-                members.Add(member);
+                var rawData = GetQuery(com);
+                var members = new List<Member>();
+                foreach (var item in rawData)
+                {
+                    var member = MapMember(item);
+                    members.Add(member);
+                }
+                return members;
             }
-            return members;
         }
 
         public Member GetMember(string loginName)
         {
-            var sqlStatement = "Select * from Member where login_name = '" + loginName + "'";
-            var rawData = GetQuery(sqlStatement);
-            if (rawData.Count < 1)
+            var sqlStatement = "Select * from Member where login_name = @loginname";
+            using (var com = new SqlCommand(sqlStatement))
             {
-                throw new Exception("Member not found");
+                com.Parameters.AddWithValue("@loginname", loginName);
+                var rawData = GetQuery(com);
+                if (rawData.Count < 1)
+                {
+                    throw new Exception("Member not found");
+                }
+                if (rawData.Count > 1)
+                {
+                    throw new Exception("Duplicate members found");
+                }
+                var item = rawData.First();
+                return MapMember(item);
             }
-            if (rawData.Count > 1)
-            {
-                throw new Exception("Duplicate members found");
-            }
-            var item = rawData.First();
-            return MapMember(item);
         }
 
         public bool AddMember(Member member)
-        { 
-            var sqlStatement = "Insert into Member (joindate, firstname, lastname, address, city, state, zipcode, phone, member_status, login_name, password, email, contact_method, subscription_id, photo, is_admin) values ('" +
-                member.JoinDate + "', '" + member.FirstName + "', '" + member.LastName + "', '" + member.Address + "', '" + member.City + "', '" + member.State + "', '" + member.Zipcode + "', '" + member.Phone + "', '" + member.MemberStatus + "', '" + 
-                member.LoginName + "', '" + member.Password + "', '" + member.Email + "', " + member.ContactMethod + ", " + member.SubscriptionId + ", '" + member.Photo + "', '" + member.IsAdmin + "')";
-            return AddQuery(sqlStatement);
+        {
+            const string sqlStatement = "Insert into Member (joindate, firstname, lastname, address, city, state, zipcode, phone, member_status, login_name, password, email, contact_method, subscription_id, photo, is_admin) values " +
+                                        "(@joindate, @firstname, @lastname, @address, @city, @state, @zipcode, @phone, @member_status, @login_name, @password, @email, @contact_method, @subscription_id, @photo, @is_admin)";
+            using (var com = new SqlCommand(sqlStatement))
+            {
+                com.Parameters.AddWithValue("@joindate", member.JoinDate);
+                com.Parameters.AddWithValue("@firstname", member.FirstName);
+                com.Parameters.AddWithValue("@lastname", member.LastName);
+                com.Parameters.AddWithValue("@address", member.Address);
+                com.Parameters.AddWithValue("@city", member.City);
+                com.Parameters.AddWithValue("@state", member.State);
+                com.Parameters.AddWithValue("@zipcode", member.Zipcode);
+                com.Parameters.AddWithValue("@phone", member.Phone);
+                com.Parameters.AddWithValue("@member_status", member.MemberStatus);
+                com.Parameters.AddWithValue("@login_name", member.LoginName);
+                com.Parameters.AddWithValue("@password", member.Password);
+                com.Parameters.AddWithValue("@email", member.Email);
+                com.Parameters.AddWithValue("@contact_method", member.ContactMethod);
+                com.Parameters.AddWithValue("@subscription_id", member.SubscriptionId);
+                com.Parameters.AddWithValue("@photo", member.Photo);
+                com.Parameters.AddWithValue("@is_admin", member.IsAdmin);
+                return NonQuery(com);
+            }
         }
 
-        public bool UpdateMember(object parameter)
+        public bool UpdateMember(Member member)
         {
             //Pre-step: Replace the general object parameter with the appropriate business class object that you are using to update the underline database table. 
             string SQLStatement = String.Empty;

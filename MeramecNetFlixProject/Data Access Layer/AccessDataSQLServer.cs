@@ -10,29 +10,27 @@ namespace MeramecNetFlixProject.Data_Access_Layer
     {
         private const string ConnectionString = "Data Source=198.209.220.125;Initial Catalog=Teamc;User ID=teamc;Password=teamc";
 
-        public List<object[]> GetQuery(string query)
+        public List<object[]> GetQuery(SqlCommand com)
         {
             using (var cnn = new SqlConnection(ConnectionString))
             {
                 try
                 {
-                    using (var com = new SqlCommand(query, cnn))
+                    com.Connection = cnn;
+                    cnn.Open();
+                    var reader = com.ExecuteReader();
+                    var rows = new List<object[]>();
+                    if (reader.HasRows)
                     {
-                        cnn.Open();
-                        var reader = com.ExecuteReader();
-                        var rows = new List<object[]>();
-                        if (reader.HasRows)
+                        while (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                var values = new object[reader.FieldCount];
-                                reader.GetValues(values);
-                                rows.Add(values);
-                            }
+                            var values = new object[reader.FieldCount];
+                            reader.GetValues(values);
+                            rows.Add(values);
                         }
-                        reader.Close();
-                        return rows;
                     }
+                    reader.Close();
+                    return rows;
                 }
                 catch (Exception ex)
                 {
@@ -42,19 +40,17 @@ namespace MeramecNetFlixProject.Data_Access_Layer
             }
         }
 
-        public bool AddQuery(string query)
+        public bool NonQuery(SqlCommand com)
         {
             using (var cnn = new SqlConnection(ConnectionString))
             {
                 try
                 {
-                    using (var com = new SqlCommand(query, cnn))
-                    {
-                        cnn.Open();
-                        var result = com.ExecuteNonQuery();
-                        cnn.Close();
-                        return result > 0;
-                    }
+                    com.Connection = cnn;
+                    cnn.Open();
+                    var result = com.ExecuteNonQuery();
+                    cnn.Close();
+                    return result > 0;
                 }
                 catch (Exception ex)
                 {
