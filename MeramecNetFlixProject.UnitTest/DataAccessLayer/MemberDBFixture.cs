@@ -113,6 +113,18 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
             Assert.That(actual.IsAdmin, Is.EqualTo(expected.IsAdmin));
         }
 
+        [Test]
+        public void Delete_Actually_Deletes()
+        {
+            var member = RandomMember();
+            _testObject.AddMember(member);
+            var memberToDelete = _testObject.GetMember(member.LoginName);
+
+            Assert.True(_testObject.DeleteMember(memberToDelete.Id));
+
+            Assert.Throws<NotFoundException>(() => _testObject.GetMember(memberToDelete.LoginName));
+        }
+
         private Member RandomMember()
         {
             return new Member

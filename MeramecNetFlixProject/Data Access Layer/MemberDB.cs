@@ -61,22 +61,14 @@ namespace MeramecNetFlixProject.Data_Access_Layer
             return DoNonQuery(member, sqlStatement);
         }
 
-        public bool DeleteMember(object Parameter)
+        public bool DeleteMember(int id)
         {
-            //Pre-step: Replace the general object parameter with the appropriate business class object that you are using to delete from the underline database table.
-            var SQLStatement = string.Empty;
-
-            //Step# 1: Add code to call the appropriate method from the inherited AccessDataSQLServer class
-            //To return a database connection object
-
-            //Step #2: Code logic to create appropriate SQL Server objects calls
-            //         Code logic to retrieve data from database
-            //         Add Try..Catch appropriate block and throw exception back to calling program
-            
-            //Step #3: return false if record was not added successfully
-            //         return true if record was added successfully
-
-            return true; //temporary return until your code is fully flushed out. Remove or comment out this line
+            var sqlStatement = "Delete from Member where id=@id";
+            using (var com = new SqlCommand(sqlStatement))
+            {
+                com.Parameters.AddWithValue("@id", id);
+                return NonQuery(com);
+            }
         }
 
         private static Member MapMember(object[] item)
