@@ -6,10 +6,14 @@ namespace MeramecNetFlixProject.Services
 {
     public class MemberService
     {
+        private readonly MemberDB _memberDb;
+        public MemberService()
+        {
+            _memberDb = new MemberDB();
+        }
         public bool ValidateLogin(string username, string password)
         {
-            var memberDB = new MemberDB();
-            var member = memberDB.GetMember(username);
+            var member = _memberDb.GetMember(username);
 
             if (member == null)
             {
@@ -21,8 +25,7 @@ namespace MeramecNetFlixProject.Services
 
         public Member GetMember(string username)
         {
-            var memberDB = new MemberDB();
-            return memberDB.GetMember(username);
+            return _memberDb.GetMember(username);
         }
 
     }
