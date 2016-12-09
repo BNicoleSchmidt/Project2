@@ -122,7 +122,7 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
 
             Assert.True(_testObject.DeleteMember(memberToDelete.Id));
 
-            Assert.Throws<NotFoundException>(() => _testObject.GetMember(memberToDelete.LoginName));
+            Assert.IsNull(_testObject.GetMember(memberToDelete.LoginName));
         }
 
         private Member RandomMember()
