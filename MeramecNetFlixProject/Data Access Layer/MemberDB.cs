@@ -35,7 +35,7 @@ namespace MeramecNetFlixProject.Data_Access_Layer
                 var rawData = GetQuery(com);
                 if (rawData.Count < 1)
                 {
-                    throw new NotFoundException("Member not found");
+                    return null;
                 }
                 if (rawData.Count > 1)
                 {

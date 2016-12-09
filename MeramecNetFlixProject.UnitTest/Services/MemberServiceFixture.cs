@@ -8,11 +8,18 @@ namespace MeramecNetFlixProject.UnitTest.Services
         [Test]
         public void ValidateLogin_Returns_False_If_Username_DNE()
         {
-            var customerService = new MemberService();
+            var memberService = new MemberService();
 
-            var actual = customerService.ValidateLogin(Random.String(), Random.String());
+            var actual = memberService.ValidateLogin(Random.String(), Random.String());
 
             Assert.IsFalse(actual);
+        }
+
+        [Test]
+        public void ValidateLogin_Returns_True_If_Matching()
+        {
+            var memberService = new MemberService();
+            Assert.True(memberService.ValidateLogin("nicole", "supersecret"));
         }
     }
 }

@@ -43,9 +43,9 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
         }
 
         [Test]
-        public void Get_Member_Throws_If_Not_Found()
+        public void Get_Member_Returns_Null_If_Not_Found()
         {
-            Assert.Throws<NotFoundException>(()=>_testObject.GetMember(Random.String()));
+            Assert.IsNull(_testObject.GetMember(Random.String()));
         }
 
         [Test]
