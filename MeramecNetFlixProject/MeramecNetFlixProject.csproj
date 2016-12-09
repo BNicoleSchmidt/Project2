@@ -144,8 +144,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Business Objects\Readme.txt" />
-    <Content Include="Data Access Layer\ReadMe.txt" />
     <Content Include="ProjectFileReadMe.txt" />
     <Content Include="UI\Images\news-092414d-lg.jpg" />
     <Content Include="UI\Images\The-Rocky-Horror-Picture-Show.jpg" />
