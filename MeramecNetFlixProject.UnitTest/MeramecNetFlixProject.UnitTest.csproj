@@ -63,6 +63,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BaseFixture.cs" />
+    <Compile Include="DataAccessLayer\RentalDBFixture.cs" />
     <Compile Include="DataAccessLayer\MovieDBFixture.cs" />
     <Compile Include="DataAccessLayer\MemberDBFixture.cs" />
     <Compile Include="RandomTester.cs" />
