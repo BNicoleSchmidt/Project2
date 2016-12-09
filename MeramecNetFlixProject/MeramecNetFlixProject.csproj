@@ -46,9 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Objects\ContactMethod.cs" />
-    <Compile Include="Data Access Layer\AccessDataSQLServer.cs" />
     <Compile Include="Business Objects\Member.cs" />
     <Compile Include="Business Objects\Movie.cs" />
+    <Compile Include="Data Access Layer\AccessDataSQLServer.cs" />
+    <Compile Include="Data Access Layer\MovieDB.cs" />
     <Compile Include="Data Access Layer\MemberDB.cs" />
     <Compile Include="Exceptions\DuplicateEntryException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
