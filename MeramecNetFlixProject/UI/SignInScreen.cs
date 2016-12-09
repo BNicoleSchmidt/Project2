@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MeramecNetFlixProject.UI;
 
 namespace MeramecNetFlixProject
 {
@@ -16,5 +17,18 @@ namespace MeramecNetFlixProject
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SignInPage mySignIn = new SignInPage();
+            mySignIn.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AdminSignIn myAdminSignIn = new AdminSignIn();
+            myAdminSignIn.ShowDialog();
+        }
     }
 }
+ 
