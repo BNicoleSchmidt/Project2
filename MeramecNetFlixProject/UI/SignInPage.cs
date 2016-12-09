@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MeramecNetFlixProject.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace MeramecNetFlixProject.UI
 {
@@ -30,7 +32,28 @@ namespace MeramecNetFlixProject.UI
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
+            //make an instance of the MemberService class
 
+            var memberService = new MemberService();
+            
+            if (memberService.ValidateLogin(txtLogin.Text, txtPassword.Text))
+            {
+                isLoggedIn = true;
+            }
+            else
+            {
+                isLoggedIn = false;
+            }
+                        
         }
+
+        public bool isLoggedIn { get; set; }
+
+
+
+        //public bool isSignedIn()
+        //{
+
+        //}
     }
 }

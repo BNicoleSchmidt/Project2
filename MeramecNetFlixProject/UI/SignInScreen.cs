@@ -22,6 +22,11 @@ namespace MeramecNetFlixProject
         {
             SignInPage mySignIn = new SignInPage();
             mySignIn.ShowDialog();
+
+            if (mySignIn.isLoggedIn)
+            {
+                menuStrip1.Enabled = true;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

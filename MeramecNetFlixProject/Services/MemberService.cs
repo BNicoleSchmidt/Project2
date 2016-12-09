@@ -11,10 +11,12 @@ namespace MeramecNetFlixProject.Services
 
             if (member == null)
             {
-                return false;
+                return false; 
             }
 
             return string.Equals(password, member.Password, StringComparison.Ordinal);
         }
+
+
     }
-}
+ }
