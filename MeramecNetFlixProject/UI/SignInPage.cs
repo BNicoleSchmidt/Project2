@@ -1,4 +1,5 @@
-﻿using MeramecNetFlixProject.Services;
+﻿using MeramecNetFlixProject.Business_Objects;
+using MeramecNetFlixProject.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,11 @@ namespace MeramecNetFlixProject.UI
             if (memberService.ValidateLogin(txtLogin.Text, txtPassword.Text))
             {
                 isLoggedIn = true;
+
+                memberLoggedIn =  memberService.GetMember(txtLogin.Text);
+
+                
+                Close();
             }
             else
             {
@@ -48,6 +54,7 @@ namespace MeramecNetFlixProject.UI
         }
 
         public bool isLoggedIn { get; set; }
+        public Member memberLoggedIn { get; set; }
 
 
 

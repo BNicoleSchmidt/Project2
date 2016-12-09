@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MeramecNetFlixProject.UI;
+using MeramecNetFlixProject.Data_Access_Layer;
 
 namespace MeramecNetFlixProject
 {
@@ -26,6 +27,7 @@ namespace MeramecNetFlixProject
             if (mySignIn.isLoggedIn)
             {
                 menuStrip1.Enabled = true;
+                btnMemberSignIn.Text = "Welcome " + mySignIn.memberLoggedIn.FirstName;
             }
         }
 
