@@ -1,4 +1,4 @@
-﻿namespace MeramecNetFlixProject
+﻿namespace MeramecNetFlixProject.UI
 {
     partial class MemberDataEntry
     {

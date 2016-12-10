@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using MeramecNetFlixProject.Business_Objects;
+using MeramecNetFlixProject.BusinessObjects;
 using MeramecNetFlixProject.Exceptions;
 
-namespace MeramecNetFlixProject.Data_Access_Layer
+namespace MeramecNetFlixProject.DataAccessLayer
 {
     // ReSharper disable once InconsistentNaming
     public class MemberDB : AccessDataSQLServer

@@ -45,16 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business Objects\ContactMethod.cs" />
-    <Compile Include="Business Objects\Member.cs" />
-    <Compile Include="Business Objects\Subscription.cs" />
-    <Compile Include="Business Objects\Rental.cs" />
-    <Compile Include="Business Objects\Movie.cs" />
-    <Compile Include="Data Access Layer\AccessDataSQLServer.cs" />
-    <Compile Include="Data Access Layer\SubscriptionDB.cs" />
-    <Compile Include="Data Access Layer\RentalDB.cs" />
-    <Compile Include="Data Access Layer\MovieDB.cs" />
-    <Compile Include="Data Access Layer\MemberDB.cs" />
+    <Compile Include="BusinessObjects\ContactMethod.cs" />
+    <Compile Include="BusinessObjects\Member.cs" />
+    <Compile Include="BusinessObjects\Subscription.cs" />
+    <Compile Include="BusinessObjects\Rental.cs" />
+    <Compile Include="BusinessObjects\Movie.cs" />
+    <Compile Include="DataAccessLayer\AccessDataSQLServer.cs" />
+    <Compile Include="DataAccessLayer\SubscriptionDB.cs" />
+    <Compile Include="DataAccessLayer\RentalDB.cs" />
+    <Compile Include="DataAccessLayer\MovieDB.cs" />
+    <Compile Include="DataAccessLayer\MemberDB.cs" />
     <Compile Include="Exceptions\DuplicateEntryException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Services\MemberService.cs" />

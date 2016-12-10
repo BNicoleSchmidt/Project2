@@ -1,5 +1,4 @@
-﻿using MeramecNetFlixProject.Business_Objects;
-using MeramecNetFlixProject.Services;
+﻿using MeramecNetFlixProject.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MeramecNetFlixProject.BusinessObjects;
 
 
 namespace MeramecNetFlixProject.UI

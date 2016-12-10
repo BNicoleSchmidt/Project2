@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace MeramecNetFlixProject.Data_Access_Layer
+namespace MeramecNetFlixProject.DataAccessLayer
 {
     // ReSharper disable once InconsistentNaming
     public class AccessDataSQLServer

@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using MeramecNetFlixProject.Business_Objects;
-using MeramecNetFlixProject.Data_Access_Layer;
+using MeramecNetFlixProject.BusinessObjects;
+using MeramecNetFlixProject.DataAccessLayer;
 using MeramecNetFlixProject.Exceptions;
 using NUnit.Framework;
 

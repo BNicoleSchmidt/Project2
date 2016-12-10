@@ -1,4 +1,4 @@
-namespace MeramecNetFlixProject.Business_Objects
+namespace MeramecNetFlixProject.BusinessObjects
 {
     public class ContactMethod
     {

@@ -1,6 +1,6 @@
 ﻿using System;
-using MeramecNetFlixProject.Data_Access_Layer;
-using MeramecNetFlixProject.Business_Objects;
+using MeramecNetFlixProject.BusinessObjects;
+using MeramecNetFlixProject.DataAccessLayer;
 
 namespace MeramecNetFlixProject.Services
 {
