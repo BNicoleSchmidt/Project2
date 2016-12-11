@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using MeramecNetFlixProject.Business_Objects;
-using MeramecNetFlixProject.Data_Access_Layer;
+using MeramecNetFlixProject.BusinessObjects;
+using MeramecNetFlixProject.DataAccessLayer;
 using MeramecNetFlixProject.Exceptions;
 using NUnit.Framework;
 
@@ -115,7 +115,7 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
                 MovieTitle = Random.String(50),
                 Description = Random.String(255),
                 MovieYearMade = Random.Int32(),
-                GenreId = Random.Int32(),
+                GenreId = Random.Int32(11),
                 MovieRating = Random.String(5),
                 MediaType = Random.String(10),
                 MovieRetailCost = Random.Int32(),

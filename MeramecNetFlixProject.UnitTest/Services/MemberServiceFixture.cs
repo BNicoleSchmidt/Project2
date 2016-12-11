@@ -21,5 +21,12 @@ namespace MeramecNetFlixProject.UnitTest.Services
             var memberService = new MemberService();
             Assert.True(memberService.ValidateLogin("nicole", "supersecret"));
         }
+
+        [Test]
+        public void ValidateLogin_Returns_False_If_Not_Matching()
+        {
+            var memberService = new MemberService();
+            Assert.False(memberService.ValidateLogin("nicole", Random.String()));
+        }
     }
 }

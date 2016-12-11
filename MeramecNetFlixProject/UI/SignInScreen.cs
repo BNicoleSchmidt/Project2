@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MeramecNetFlixProject.UI;
-using MeramecNetFlixProject.Data_Access_Layer;
+using MeramecNetFlixProject.BusinessObjects;
 
-namespace MeramecNetFlixProject
+namespace MeramecNetFlixProject.UI
 {
     public partial class SignInScreen : Form
     {
+        private Member _currentMember;
         public SignInScreen()
         {
             InitializeComponent();
@@ -21,13 +14,14 @@ namespace MeramecNetFlixProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SignInPage mySignIn = new SignInPage();
+            SignInPage mySignIn = new SignInPage(_currentMember);
             mySignIn.ShowDialog();
 
-            if (mySignIn.isLoggedIn)
+            if (mySignIn.IsLoggedIn)
             {
                 menuStrip1.Enabled = true;
-                btnMemberSignIn.Text = "Welcome " + mySignIn.memberLoggedIn.FirstName;
+                _currentMember = mySignIn.MemberLoggedIn;
+                btnMemberSignIn.Text = @"Welcome " + _currentMember.FirstName;
             }
         }
 

@@ -45,12 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business Objects\ContactMethod.cs" />
-    <Compile Include="Business Objects\Member.cs" />
-    <Compile Include="Business Objects\Movie.cs" />
-    <Compile Include="Data Access Layer\AccessDataSQLServer.cs" />
-    <Compile Include="Data Access Layer\MovieDB.cs" />
-    <Compile Include="Data Access Layer\MemberDB.cs" />
+    <Compile Include="BusinessObjects\Genre.cs" />
+    <Compile Include="BusinessObjects\ContactMethod.cs" />
+    <Compile Include="BusinessObjects\Member.cs" />
+    <Compile Include="BusinessObjects\Subscription.cs" />
+    <Compile Include="BusinessObjects\Rental.cs" />
+    <Compile Include="BusinessObjects\Movie.cs" />
+    <Compile Include="DataAccessLayer\AccessDataSQLServer.cs" />
+    <Compile Include="DataAccessLayer\GenreDB.cs" />
+    <Compile Include="DataAccessLayer\ContactMethodDB.cs" />
+    <Compile Include="DataAccessLayer\SubscriptionDB.cs" />
+    <Compile Include="DataAccessLayer\RentalDB.cs" />
+    <Compile Include="DataAccessLayer\MovieDB.cs" />
+    <Compile Include="DataAccessLayer\MemberDB.cs" />
     <Compile Include="Exceptions\DuplicateEntryException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Services\MemberService.cs" />
@@ -142,11 +149,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Business Objects\Readme.txt" />
-    <Content Include="Data Access Layer\ReadMe.txt" />
     <Content Include="ProjectFileReadMe.txt" />
-    <Content Include="UI\Images\news-092414d-lg.jpg" />
-    <Content Include="UI\Images\The-Rocky-Horror-Picture-Show.jpg" />
+    <Content Include="UI\Images\Hitchhikers.jpg" />
+    <Content Include="UI\Images\RockyHorror.jpg" />
     <Content Include="UI\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,6 @@
 ﻿using System.Linq;
-using MeramecNetFlixProject.Business_Objects;
-using MeramecNetFlixProject.Data_Access_Layer;
-using MeramecNetFlixProject.Exceptions;
+using MeramecNetFlixProject.BusinessObjects;
+using MeramecNetFlixProject.DataAccessLayer;
 using NUnit.Framework;
 
 namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
@@ -122,7 +121,7 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
 
             Assert.True(_testObject.DeleteMember(memberToDelete.Id));
 
-            Assert.Throws<NotFoundException>(() => _testObject.GetMember(memberToDelete.LoginName));
+            Assert.IsNull(_testObject.GetMember(memberToDelete.LoginName));
         }
 
         private Member RandomMember()
@@ -137,7 +136,7 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
                 State = Random.String(2),
                 Zipcode = Random.Int32(99999),
                 Phone = Random.String(10),
-                MemberStatus = Random.String(1),
+                MemberStatus = Random.Int32(100) > 50 ? "A" : "I",
                 LoginName = Random.String(),
                 Password = Random.String(),
                 Email = Random.String(),
