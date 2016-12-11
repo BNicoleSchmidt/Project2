@@ -36,6 +36,12 @@ namespace MeramecNetFlixProject
             AdminSignIn myAdminSignIn = new AdminSignIn();
             myAdminSignIn.ShowDialog();
         }
+
+        private void browseInventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BrowseInventory myInventoryBrowser = new BrowseInventory();
+            myInventoryBrowser.ShowDialog();
+        }
     }
 }
  

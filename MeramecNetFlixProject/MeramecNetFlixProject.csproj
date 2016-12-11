@@ -72,6 +72,12 @@
     <Compile Include="UI\MovieForm.Designer.cs">
       <DependentUpon>MovieForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\BrowseInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BrowseInventory.Designer.cs">
+      <DependentUpon>BrowseInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\SignInPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <EmbeddedResource Include="UI\MovieForm.resx">
       <DependentUpon>MovieForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\BrowseInventory.resx">
+      <DependentUpon>BrowseInventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\SignInPage.resx">
       <DependentUpon>SignInPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +145,8 @@
     <Content Include="Business Objects\Readme.txt" />
     <Content Include="Data Access Layer\ReadMe.txt" />
     <Content Include="ProjectFileReadMe.txt" />
+    <Content Include="UI\Images\news-092414d-lg.jpg" />
+    <Content Include="UI\Images\The-Rocky-Horror-Picture-Show.jpg" />
     <Content Include="UI\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +155,7 @@
       <Name>MeramecNetFlixComponentProject</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

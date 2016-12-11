@@ -51,7 +51,7 @@
             this.orderMovieToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(745, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(567, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,6 +72,7 @@
             this.browseInventoryToolStripMenuItem.Name = "browseInventoryToolStripMenuItem";
             this.browseInventoryToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.browseInventoryToolStripMenuItem.Text = "Browse Inventory";
+            this.browseInventoryToolStripMenuItem.Click += new System.EventHandler(this.browseInventoryToolStripMenuItem_Click);
             // 
             // orderMovieToolStripMenuItem
             // 
@@ -84,7 +85,7 @@
             this.btnMemberSignIn.BackColor = System.Drawing.Color.Silver;
             this.btnMemberSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMemberSignIn.ForeColor = System.Drawing.Color.Red;
-            this.btnMemberSignIn.Location = new System.Drawing.Point(206, 37);
+            this.btnMemberSignIn.Location = new System.Drawing.Point(120, 46);
             this.btnMemberSignIn.Name = "btnMemberSignIn";
             this.btnMemberSignIn.Size = new System.Drawing.Size(319, 55);
             this.btnMemberSignIn.TabIndex = 1;
@@ -95,7 +96,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(206, 98);
+            this.pictureBox1.Location = new System.Drawing.Point(120, 107);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(319, 247);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -107,7 +108,7 @@
             this.btnAdminSignIn.BackColor = System.Drawing.Color.Silver;
             this.btnAdminSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdminSignIn.ForeColor = System.Drawing.Color.Red;
-            this.btnAdminSignIn.Location = new System.Drawing.Point(206, 350);
+            this.btnAdminSignIn.Location = new System.Drawing.Point(120, 359);
             this.btnAdminSignIn.Name = "btnAdminSignIn";
             this.btnAdminSignIn.Size = new System.Drawing.Size(319, 55);
             this.btnAdminSignIn.TabIndex = 1;
@@ -120,7 +121,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(745, 417);
+            this.ClientSize = new System.Drawing.Size(567, 434);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAdminSignIn);
             this.Controls.Add(this.btnMemberSignIn);
