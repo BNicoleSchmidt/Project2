@@ -51,6 +51,7 @@
     <Compile Include="BusinessObjects\Rental.cs" />
     <Compile Include="BusinessObjects\Movie.cs" />
     <Compile Include="DataAccessLayer\AccessDataSQLServer.cs" />
+    <Compile Include="DataAccessLayer\ContactMethodDB.cs" />
     <Compile Include="DataAccessLayer\SubscriptionDB.cs" />
     <Compile Include="DataAccessLayer\RentalDB.cs" />
     <Compile Include="DataAccessLayer\MovieDB.cs" />

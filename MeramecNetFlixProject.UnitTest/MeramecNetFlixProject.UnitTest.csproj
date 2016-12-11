@@ -63,6 +63,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BaseFixture.cs" />
+    <Compile Include="DataAccessLayer\ContactMethodDBFixture.cs" />
     <Compile Include="DataAccessLayer\SubscriptionDBFixture.cs" />
     <Compile Include="DataAccessLayer\RentalDBFixture.cs" />
     <Compile Include="DataAccessLayer\MovieDBFixture.cs" />
