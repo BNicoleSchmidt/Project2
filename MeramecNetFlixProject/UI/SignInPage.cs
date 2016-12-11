@@ -1,12 +1,5 @@
 ﻿using MeramecNetFlixProject.Services;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MeramecNetFlixProject.BusinessObjects;
 
@@ -15,15 +8,19 @@ namespace MeramecNetFlixProject.UI
 {
     public partial class SignInPage : Form
     {
-        public SignInPage()
+        public SignInPage(Member currentMember)
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            if (currentMember != null)
+            {
+                alreadyLoggedInLabel.Text = @"You are logged in as " + currentMember.FirstName + @". Change user?";
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MemberDataEntry myMemeber = new MemberDataEntry();
-            myMemeber.ShowDialog();
+            MemberDataEntry member = new MemberDataEntry();
+            member.ShowDialog();
         }
 
         private void btnSignInCancle_Click(object sender, EventArgs e)
@@ -34,7 +31,6 @@ namespace MeramecNetFlixProject.UI
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             //make an instance of the MemberService class
-
             var memberService = new MemberService();
             
             if (memberService.ValidateLogin(txtLogin.Text, txtPassword.Text))
@@ -49,6 +45,7 @@ namespace MeramecNetFlixProject.UI
             else
             {
                 isLoggedIn = false;
+                errorLabel.Text = @"Username or Password is incorrect. Try again or Sign Up.";
             }
                         
         }
