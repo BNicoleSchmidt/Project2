@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using MeramecNetFlixProject.Services;
 
 namespace MeramecNetFlixProject.UI
 {
     public partial class BrowseInventory : Form
     {
+        private MovieService _movieService;
+
         public BrowseInventory()
         {
             InitializeComponent();
@@ -27,6 +22,8 @@ namespace MeramecNetFlixProject.UI
             pnlDescription.HorizontalScroll.Visible = false;
             pnlDescription.HorizontalScroll.Maximum = 0;
             pnlDescription.AutoScroll = true;
+
+            _movieService = new MovieService();
         }
 
 

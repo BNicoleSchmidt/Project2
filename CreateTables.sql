@@ -23,7 +23,7 @@ insert into Movie (movie_title, description, movie_year_made, genre_id, movie_ra
 insert into Member (joindate, firstname, lastname, address, city, state, zipcode, phone, member_status, login_name, password, email, contact_method, subscription_id, is_admin) values
 	('2016-11-11', 'Nicole', 'Schmidt', '123 Any Street', 'Nowhere', 'NO', '12345', '1234567890', 'A', 'nicole', 'supersecret', 'n@s.co', 2, 1, 1),
 	('2016-11-12', 'Tim', 'Stuart', '456 Some Road', 'Awayfromhere', 'FU', '98765', '0987654321', 'I', 'tim', 'supersecret', 't@s.uk', 1, 2, 1),
-	('2010-01-01', 'John', 'Smith', '5 Street Lane', 'Citytown', 'ST', '87654', '7396748623', 'A', 'john', 'supersecret1', 'j@s.gov', 1, 1, 0);
+	('2010-01-01', 'John', 'Smith', '5 Street Lane', 'Citytown', 'ST', '87654', '7396748623', 'A', 'john', 'supersecret', 'j@s.gov', 1, 1, 0);
 insert into Rental (movie_number, member_number, media_checkout_date, media_return_date) values
 	(1, 1, '2016-11-11', '2016-11-12'),
 	(2, 2, '2016-11-12', null);
