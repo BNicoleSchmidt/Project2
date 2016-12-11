@@ -8,6 +8,9 @@ namespace MeramecNetFlixProject.UI
 {
     public partial class SignInPage : Form
     {
+        public bool IsLoggedIn { get; set; }
+        public Member MemberLoggedIn { get; set; }
+
         public SignInPage(Member currentMember)
         {
             InitializeComponent();
@@ -35,29 +38,18 @@ namespace MeramecNetFlixProject.UI
             
             if (memberService.ValidateLogin(txtLogin.Text, txtPassword.Text))
             {
-                isLoggedIn = true;
+                IsLoggedIn = true;
 
-                memberLoggedIn =  memberService.GetMember(txtLogin.Text);
+                MemberLoggedIn =  memberService.GetMember(txtLogin.Text);
 
                 
                 Close();
             }
             else
             {
-                isLoggedIn = false;
+                IsLoggedIn = false;
                 errorLabel.Text = @"Username or Password is incorrect. Try again or Sign Up.";
             }
-                        
         }
-
-        public bool isLoggedIn { get; set; }
-        public Member memberLoggedIn { get; set; }
-
-
-
-        //public bool isSignedIn()
-        //{
-
-        //}
     }
 }

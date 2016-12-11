@@ -17,10 +17,10 @@ namespace MeramecNetFlixProject.UI
             SignInPage mySignIn = new SignInPage(_currentMember);
             mySignIn.ShowDialog();
 
-            if (mySignIn.isLoggedIn)
+            if (mySignIn.IsLoggedIn)
             {
                 menuStrip1.Enabled = true;
-                _currentMember = mySignIn.memberLoggedIn;
+                _currentMember = mySignIn.MemberLoggedIn;
                 btnMemberSignIn.Text = @"Welcome " + _currentMember.FirstName;
             }
         }
