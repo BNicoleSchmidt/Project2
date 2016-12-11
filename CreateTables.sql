@@ -15,11 +15,11 @@ create table Vendor ( id int not null identity primary key, name varchar(30) not
 create table Rental ( id int not null identity primary key, movie_number int not null, member_number int not null, media_checkout_date datetime not null, media_return_date datetime null);
 
 insert into Genre (name) values ('Childrens'),('Comedy'),('Horror'),('Drama'),('Action'),('Classic'),('Sci-fi'),('Documentary'),('Romance'),('Musical'),('Mystery');
-insert into Contact_Method (name) values ('Phone'), ('Email');
-insert into Subscription (name, cost) values ('Standard', 10),('Plus', 15);
-insert into Movie (movie_title, description, movie_year_made, genre_id, movie_rating, media_type, movie_retail_cost, copies_on_hand) values
-	('Rocky Horror Picture Show', '1975 horror comedy musical starring Tim Curry', 1975, 10, 'R', 'DVD', 15, 8),
-	('Hitchhiker''s Guide to the Galaxy', 'Space comedy', 2005, 7, 'PG', 'DVD', 15, 2);
+insert into Contact_Method (name) values ('Phone'),('Email'),('Facebook'),('Twitter');
+insert into Subscription (name, cost) values ('Standard', 10),('Plus', 15),('Trial', 0),('Student', 5);
+insert into Movie (movie_title, description, movie_year_made, genre_id, movie_rating, media_type, movie_retail_cost, copies_on_hand, image) values
+	('Rocky Horror Picture Show', '1975 horror comedy musical starring Tim Curry', 1975, 10, 'R', 'DVD', 15, 8, 'RockyHorror.jpg'),
+	('Hitchhiker''s Guide to the Galaxy', 'Space comedy', 2005, 7, 'PG', 'DVD', 15, 2, 'Hitchhikers.jpg');
 insert into Member (joindate, firstname, lastname, address, city, state, zipcode, phone, member_status, login_name, password, email, contact_method, subscription_id, is_admin) values
 	('2016-11-11', 'Nicole', 'Schmidt', '123 Any Street', 'Nowhere', 'NO', '12345', '1234567890', 'A', 'nicole', 'supersecret', 'n@s.co', 2, 1, 1),
 	('2016-11-12', 'Tim', 'Stuart', '456 Some Road', 'Awayfromhere', 'FU', '98765', '0987654321', 'I', 'tim', 'supersecret', 't@s.uk', 1, 2, 1),

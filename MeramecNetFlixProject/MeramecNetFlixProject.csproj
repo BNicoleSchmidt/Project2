@@ -150,8 +150,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ProjectFileReadMe.txt" />
-    <Content Include="UI\Images\news-092414d-lg.jpg" />
-    <Content Include="UI\Images\The-Rocky-Horror-Picture-Show.jpg" />
+    <Content Include="UI\Images\Hitchhikers.jpg" />
+    <Content Include="UI\Images\RockyHorror.jpg" />
     <Content Include="UI\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
