@@ -45,12 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\Genre.cs" />
     <Compile Include="BusinessObjects\ContactMethod.cs" />
     <Compile Include="BusinessObjects\Member.cs" />
     <Compile Include="BusinessObjects\Subscription.cs" />
     <Compile Include="BusinessObjects\Rental.cs" />
     <Compile Include="BusinessObjects\Movie.cs" />
     <Compile Include="DataAccessLayer\AccessDataSQLServer.cs" />
+    <Compile Include="DataAccessLayer\GenreDB.cs" />
     <Compile Include="DataAccessLayer\ContactMethodDB.cs" />
     <Compile Include="DataAccessLayer\SubscriptionDB.cs" />
     <Compile Include="DataAccessLayer\RentalDB.cs" />
