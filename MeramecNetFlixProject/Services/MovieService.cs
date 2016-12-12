@@ -30,5 +30,10 @@ namespace MeramecNetFlixProject.Services
         {
             return _allMovies.Where(x => x.MovieTitle.Contains(search)).ToList();
         }
+
+        public bool AddMovie(Movie movie)
+        {
+            return _movieDb.AddMovie(movie);
+        }
     }
  }
