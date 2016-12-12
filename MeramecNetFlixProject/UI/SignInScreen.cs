@@ -17,24 +17,38 @@ namespace MeramecNetFlixProject.UI
             SignInPage mySignIn = new SignInPage(_currentMember);
             mySignIn.ShowDialog();
 
-            if (mySignIn.IsLoggedIn)
+            if (mySignIn.MemberLoggedIn != null)
             {
+                if (mySignIn.MemberLoggedIn.IsAdmin == true)
+                {
+                    btnUpdateGenre.Visible = true;
+                    btnUpdateMovies.Visible = true;
+                }
+
                 menuStrip1.Enabled = true;
                 _currentMember = mySignIn.MemberLoggedIn;
                 btnMemberSignIn.Text = @"Welcome " + _currentMember.FirstName;
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            AdminSignIn myAdminSignIn = new AdminSignIn();
-            myAdminSignIn.ShowDialog();
+            
+            
         }
 
         private void browseInventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BrowseInventory myInventoryBrowser = new BrowseInventory();
             myInventoryBrowser.ShowDialog();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            GenreForm genreForm = new GenreForm();
+            genreForm.ShowDialog();
+        }
+
+        private void btnUpdateMovies_Click(object sender, EventArgs e)
+        {
+            MovieForm movieForm = new MovieForm();
+            movieForm.ShowDialog();                        
         }
     }
 }

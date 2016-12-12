@@ -1,6 +1,6 @@
 ﻿namespace MeramecNetFlixProject.UI
 {
-    partial class Genre
+    partial class GenreForm
     {
         /// <summary>
         /// Required designer variable.

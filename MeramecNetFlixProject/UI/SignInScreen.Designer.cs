@@ -36,7 +36,8 @@
             this.orderMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMemberSignIn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAdminSignIn = new System.Windows.Forms.Button();
+            this.btnUpdateGenre = new System.Windows.Forms.Button();
+            this.btnUpdateMovies = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -52,34 +53,33 @@
             this.orderMovieToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(756, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(455, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // manageAccountToolStripMenuItem
             // 
             this.manageAccountToolStripMenuItem.Name = "manageAccountToolStripMenuItem";
-            this.manageAccountToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
+            this.manageAccountToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.manageAccountToolStripMenuItem.Text = "Manage Account";
             // 
             // createWatchListToolStripMenuItem
             // 
             this.createWatchListToolStripMenuItem.Name = "createWatchListToolStripMenuItem";
-            this.createWatchListToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
+            this.createWatchListToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
             this.createWatchListToolStripMenuItem.Text = "Create Watch List";
             // 
             // browseInventoryToolStripMenuItem
             // 
             this.browseInventoryToolStripMenuItem.Name = "browseInventoryToolStripMenuItem";
-            this.browseInventoryToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.browseInventoryToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.browseInventoryToolStripMenuItem.Text = "Browse Inventory";
             this.browseInventoryToolStripMenuItem.Click += new System.EventHandler(this.browseInventoryToolStripMenuItem_Click);
             // 
             // orderMovieToolStripMenuItem
             // 
             this.orderMovieToolStripMenuItem.Name = "orderMovieToolStripMenuItem";
-            this.orderMovieToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.orderMovieToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.orderMovieToolStripMenuItem.Text = "Order Movie";
             // 
             // btnMemberSignIn
@@ -87,10 +87,10 @@
             this.btnMemberSignIn.BackColor = System.Drawing.Color.Silver;
             this.btnMemberSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMemberSignIn.ForeColor = System.Drawing.Color.Red;
-            this.btnMemberSignIn.Location = new System.Drawing.Point(160, 57);
-            this.btnMemberSignIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMemberSignIn.Location = new System.Drawing.Point(64, 55);
+            this.btnMemberSignIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMemberSignIn.Name = "btnMemberSignIn";
-            this.btnMemberSignIn.Size = new System.Drawing.Size(425, 68);
+            this.btnMemberSignIn.Size = new System.Drawing.Size(319, 55);
             this.btnMemberSignIn.TabIndex = 1;
             this.btnMemberSignIn.Text = "Sign In";
             this.btnMemberSignIn.UseVisualStyleBackColor = false;
@@ -99,40 +99,54 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(160, 132);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(64, 114);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(425, 304);
+            this.pictureBox1.Size = new System.Drawing.Size(319, 247);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // btnAdminSignIn
+            // btnUpdateGenre
             // 
-            this.btnAdminSignIn.BackColor = System.Drawing.Color.Silver;
-            this.btnAdminSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminSignIn.ForeColor = System.Drawing.Color.Red;
-            this.btnAdminSignIn.Location = new System.Drawing.Point(160, 442);
-            this.btnAdminSignIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnAdminSignIn.Name = "btnAdminSignIn";
-            this.btnAdminSignIn.Size = new System.Drawing.Size(425, 68);
-            this.btnAdminSignIn.TabIndex = 1;
-            this.btnAdminSignIn.Text = "Sign In As Admin";
-            this.btnAdminSignIn.UseVisualStyleBackColor = false;
-            this.btnAdminSignIn.Click += new System.EventHandler(this.button2_Click);
+            this.btnUpdateGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateGenre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnUpdateGenre.Location = new System.Drawing.Point(64, 380);
+            this.btnUpdateGenre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdateGenre.Name = "btnUpdateGenre";
+            this.btnUpdateGenre.Size = new System.Drawing.Size(101, 25);
+            this.btnUpdateGenre.TabIndex = 3;
+            this.btnUpdateGenre.Text = "Update Genre";
+            this.btnUpdateGenre.UseVisualStyleBackColor = true;
+            this.btnUpdateGenre.Visible = false;
+            this.btnUpdateGenre.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnUpdateMovies
+            // 
+            this.btnUpdateMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateMovies.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnUpdateMovies.Location = new System.Drawing.Point(282, 380);
+            this.btnUpdateMovies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdateMovies.Name = "btnUpdateMovies";
+            this.btnUpdateMovies.Size = new System.Drawing.Size(101, 25);
+            this.btnUpdateMovies.TabIndex = 3;
+            this.btnUpdateMovies.Text = "Update Movies";
+            this.btnUpdateMovies.UseVisualStyleBackColor = true;
+            this.btnUpdateMovies.Visible = false;
+            this.btnUpdateMovies.Click += new System.EventHandler(this.btnUpdateMovies_Click);
             // 
             // SignInScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(756, 534);
+            this.ClientSize = new System.Drawing.Size(455, 437);
+            this.Controls.Add(this.btnUpdateMovies);
+            this.Controls.Add(this.btnUpdateGenre);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnAdminSignIn);
             this.Controls.Add(this.btnMemberSignIn);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SignInScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meramec On-Line Kiosk Movie Rental System";
@@ -153,6 +167,7 @@
         private System.Windows.Forms.ToolStripMenuItem orderMovieToolStripMenuItem;
         private System.Windows.Forms.Button btnMemberSignIn;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnAdminSignIn;
+        private System.Windows.Forms.Button btnUpdateGenre;
+        private System.Windows.Forms.Button btnUpdateMovies;
     }
 }
