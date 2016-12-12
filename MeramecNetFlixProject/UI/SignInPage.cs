@@ -49,6 +49,7 @@ namespace MeramecNetFlixProject.UI
             {
                 IsLoggedIn = false;
                 errorLabel.Text = @"Username or Password is incorrect. Try again or Sign Up.";
+                txtPassword.Text = String.Empty;
             }
         }
     }

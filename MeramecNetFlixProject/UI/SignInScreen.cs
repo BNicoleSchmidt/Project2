@@ -50,6 +50,20 @@ namespace MeramecNetFlixProject.UI
             MovieForm movieForm = new MovieForm();
             movieForm.ShowDialog();                        
         }
+
+        private void manageAccountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MemberDataEntry memberEdit = new MemberDataEntry(_currentMember);
+            memberEdit.ShowDialog();
+            
+
+        }
+
+        private void createWatchListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Favorites favoritesPage = new Favorites();
+            favoritesPage.ShowDialog();
+        }
     }
 }
  
