@@ -21,7 +21,14 @@ namespace MeramecNetFlixProject.UI
             pnlMovieScroller.HorizontalScroll.Visible = false;
             pnlMovieScroller.HorizontalScroll.Maximum = 0;
             pnlMovieScroller.AutoScroll = true;
+
+            pnlDescription.AutoScroll = false;
+            pnlDescription.HorizontalScroll.Enabled = false;
+            pnlDescription.HorizontalScroll.Visible = false;
+            pnlDescription.HorizontalScroll.Maximum = 0;
+            pnlDescription.AutoScroll = true;
         }
+
 
     }
 }
