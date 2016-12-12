@@ -60,6 +60,7 @@
     <Compile Include="DataAccessLayer\MemberDB.cs" />
     <Compile Include="Exceptions\DuplicateEntryException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
+    <Compile Include="Services\MovieService.cs" />
     <Compile Include="Services\MemberService.cs" />
     <Compile Include="UI\AdminSignIn.cs">
       <SubType>Form</SubType>
