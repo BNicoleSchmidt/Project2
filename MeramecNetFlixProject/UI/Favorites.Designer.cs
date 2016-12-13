@@ -39,6 +39,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(13, 13);
@@ -50,6 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(19, 74);
@@ -69,6 +71,7 @@
             // lblMovieTitle
             // 
             this.lblMovieTitle.AutoSize = true;
+            this.lblMovieTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblMovieTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblMovieTitle.Location = new System.Drawing.Point(184, 74);
             this.lblMovieTitle.Name = "lblMovieTitle";
@@ -85,6 +88,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Location = new System.Drawing.Point(12, 119);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(580, 402);
@@ -95,6 +99,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackgroundImage = global::MeramecNetFlixProject.Properties.Resources.blue_fractal_background;
             this.ClientSize = new System.Drawing.Size(604, 533);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtMovieTitle);

@@ -129,6 +129,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\MovieForm.resx">
       <DependentUpon>MovieForm.cs</DependentUpon>
@@ -160,8 +161,29 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ProjectFileReadMe.txt" />
+    <None Include="Resources\5.jpg" />
+    <None Include="Resources\Yy1rcP0.jpg" />
+    <None Include="Resources\9.jpg" />
+    <None Include="Resources\4.jpg" />
+    <None Include="Resources\blue-fractal-background.jpg" />
+    <Content Include="UI\Images\Godfather.jpeg" />
+    <Content Include="UI\Images\Godfather2.jpeg" />
+    <Content Include="UI\Images\Godfather3.jpeg" />
+    <Content Include="UI\Images\Godfather4.jpeg" />
     <Content Include="UI\Images\Hitchhikers.jpg" />
+    <Content Include="UI\Images\KungFury.jpeg" />
+    <Content Include="UI\Images\KungFury2.jpeg" />
+    <Content Include="UI\Images\KungFury3.jpeg" />
+    <Content Include="UI\Images\kungFury4.jpeg" />
+    <Content Include="UI\Images\PirncessBride3.jpeg" />
+    <Content Include="UI\Images\PrincessBride.jpeg" />
+    <Content Include="UI\Images\PrincessBride2.jpeg" />
+    <Content Include="UI\Images\PrincessBride4.jpeg" />
     <Content Include="UI\Images\RockyHorror.jpg" />
+    <Content Include="UI\Images\StarWars.jpeg" />
+    <Content Include="UI\Images\StarWars2.jpeg" />
+    <Content Include="UI\Images\StarWars3.jpeg" />
+    <Content Include="UI\Images\StarWars4.jpeg" />
     <Content Include="UI\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
