@@ -1,13 +1,40 @@
-﻿using System;
+﻿using MeramecNetFlixProject.BusinessObjects;
+using System;
 using System.Windows.Forms;
 
 namespace MeramecNetFlixProject.UI
 {
     public partial class MemberDataEntry : Form
     {
+        private Member _currentMember;
+
         public MemberDataEntry()
         {
             InitializeComponent();
+        }
+
+        public MemberDataEntry(Member currentMember)
+        {
+            InitializeComponent();
+
+            _currentMember = currentMember;
+
+            txtMemberNumber.Enabled = false;
+            txtJoinDate.Enabled = false;
+            btnMemberAdd.Enabled = false;
+            btnMemberBrowse.Enabled = false;
+            btnMemberUpdate.Enabled = true;
+
+            txtFirstname.Text = currentMember.FirstName;
+            txtLastName.Text = currentMember.LastName;
+            txtEmail.Text = currentMember.Email;
+            txtLoginName.Text = currentMember.LoginName;
+            txtAddress.Text = currentMember.Address;
+            txtCity.Text = currentMember.City;
+            txtState.Text = currentMember.State;
+            txtZipCode.Text = currentMember.Zipcode.ToString();
+            txtPhone.Text = currentMember.Phone.ToString();
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)

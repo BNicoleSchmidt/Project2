@@ -46,8 +46,8 @@
             this.txtCity = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtState = new System.Windows.Forms.TextBox();
+            this.txtZipCode = new System.Windows.Forms.TextBox();
             this.txtLoginName = new System.Windows.Forms.TextBox();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -242,19 +242,19 @@
             this.txtEmail.Size = new System.Drawing.Size(240, 20);
             this.txtEmail.TabIndex = 3;
             // 
-            // textBox9
+            // txtState
             // 
-            this.textBox9.Location = new System.Drawing.Point(327, 211);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(50, 20);
-            this.textBox9.TabIndex = 3;
+            this.txtState.Location = new System.Drawing.Point(327, 211);
+            this.txtState.Name = "txtState";
+            this.txtState.Size = new System.Drawing.Size(50, 20);
+            this.txtState.TabIndex = 3;
             // 
-            // textBox10
+            // txtZipCode
             // 
-            this.textBox10.Location = new System.Drawing.Point(446, 211);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 3;
+            this.txtZipCode.Location = new System.Drawing.Point(446, 211);
+            this.txtZipCode.Name = "txtZipCode";
+            this.txtZipCode.Size = new System.Drawing.Size(100, 20);
+            this.txtZipCode.TabIndex = 3;
             // 
             // txtLoginName
             // 
@@ -508,8 +508,8 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtConfirmPassword);
             this.Controls.Add(this.txtLoginName);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.txtZipCode);
+            this.Controls.Add(this.txtState);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtCity);
@@ -566,8 +566,8 @@
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtState;
+        private System.Windows.Forms.TextBox txtZipCode;
         private System.Windows.Forms.TextBox txtLoginName;
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Label label2;
