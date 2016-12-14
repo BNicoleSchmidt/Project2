@@ -133,6 +133,6 @@
         private System.Windows.Forms.Button btnSimilarTitles;
         private System.Windows.Forms.Button btnOrderMovie;
         private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;  
     }
 }
