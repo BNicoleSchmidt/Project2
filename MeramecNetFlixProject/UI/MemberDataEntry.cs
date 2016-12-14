@@ -1,8 +1,9 @@
 ﻿using MeramecNetFlixProject.BusinessObjects;
 using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 using MeramecNetFlixProject.DataAccessLayer;
-using MeramecNetFlixProject.Services;
 
 namespace MeramecNetFlixProject.UI
 {
@@ -16,6 +17,19 @@ namespace MeramecNetFlixProject.UI
             InitializeComponent();
             _memberDb = new MemberDB();
             _currentMember = new Member();
+            try
+            {
+                String connectionString = "Data Source=198.209.220.125;Initial Catalog=Teamc;User ID=teamc;Password=teamc";
+                var dataAdapter = new SqlDataAdapter("Select * from Member", connectionString);
+                var table = new DataTable {Locale = System.Globalization.CultureInfo.InvariantCulture};
+                dataAdapter.Fill(table);
+                dataGridView1.DataSource = table;
+                dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(@"SQL Error: " +  e.Message);
+            }
         }
 
         public MemberDataEntry(Member currentMember)
@@ -29,23 +43,7 @@ namespace MeramecNetFlixProject.UI
             btnMemberAdd.Enabled = false;
             btnMemberBrowse.Enabled = false;
             btnMemberUpdate.Enabled = true;
-            if (currentMember.MemberStatus == "A") rdoActive.Checked = true;
-            else rdoInactive.Checked = true;
-            if (currentMember.ContactMethod == 1) rdoPhoneText.Checked = true;
-            if (currentMember.ContactMethod == 2) rdoEmail.Checked = true;
-            if (currentMember.ContactMethod == 3) rdoFaceBook.Checked = true;
-            if (currentMember.ContactMethod == 4) rdoTwitter.Checked = true;
-            txtMemberNumber.Text = currentMember.Id.ToString();
-            txtJoinDate.Text = currentMember.JoinDate.ToShortDateString();
-            txtFirstname.Text = currentMember.FirstName;
-            txtLastName.Text = currentMember.LastName;
-            txtEmail.Text = currentMember.Email;
-            txtLoginName.Text = currentMember.LoginName;
-            txtAddress.Text = currentMember.Address;
-            txtCity.Text = currentMember.City;
-            txtState.Text = currentMember.State;
-            txtZipCode.Text = currentMember.Zipcode.ToString();
-            txtPhone.Text = currentMember.Phone;
+            LoadMember();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -164,6 +162,45 @@ namespace MeramecNetFlixProject.UI
                 _currentMember.Password = txtPassword.Text;
             }
             return true;
+        }
+
+        private void btnMemberBrowse_Click(object sender, EventArgs e)
+        {
+            int id;
+            if (!int.TryParse(txtMemberNumber.Text, out id))
+            {
+                errorLabel.Text = @"Enter valid Member Number.";
+                return;
+            }
+            _currentMember = _memberDb.GetMemberById(id);
+            if (_currentMember == null)
+            {
+                errorLabel.Text = "Member " + id + " does not exist.";
+                return;
+            }
+            LoadMember();
+            errorLabel.Text = "";
+        }
+
+        private void LoadMember()
+        {
+            if (_currentMember.MemberStatus == "A") rdoActive.Checked = true;
+            else rdoInactive.Checked = true;
+            if (_currentMember.ContactMethod == 1) rdoPhoneText.Checked = true;
+            if (_currentMember.ContactMethod == 2) rdoEmail.Checked = true;
+            if (_currentMember.ContactMethod == 3) rdoFaceBook.Checked = true;
+            if (_currentMember.ContactMethod == 4) rdoTwitter.Checked = true;
+            txtMemberNumber.Text = _currentMember.Id.ToString();
+            txtJoinDate.Text = _currentMember.JoinDate.ToShortDateString();
+            txtFirstname.Text = _currentMember.FirstName;
+            txtLastName.Text = _currentMember.LastName;
+            txtEmail.Text = _currentMember.Email;
+            txtLoginName.Text = _currentMember.LoginName;
+            txtAddress.Text = _currentMember.Address;
+            txtCity.Text = _currentMember.City;
+            txtState.Text = _currentMember.State;
+            txtZipCode.Text = _currentMember.Zipcode.ToString();
+            txtPhone.Text = _currentMember.Phone;
         }
     }
 }

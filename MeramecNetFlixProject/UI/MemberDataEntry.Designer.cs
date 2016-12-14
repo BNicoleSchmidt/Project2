@@ -442,11 +442,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Enabled = false;
             this.dataGridView1.Location = new System.Drawing.Point(17, 372);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1193, 132);
             this.dataGridView1.TabIndex = 7;
             // 
@@ -463,19 +465,18 @@
             // 
             // btnMemberBrowse
             // 
-            this.btnMemberBrowse.Enabled = false;
             this.btnMemberBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMemberBrowse.Location = new System.Drawing.Point(231, 524);
             this.btnMemberBrowse.Margin = new System.Windows.Forms.Padding(4);
             this.btnMemberBrowse.Name = "btnMemberBrowse";
             this.btnMemberBrowse.Size = new System.Drawing.Size(185, 53);
             this.btnMemberBrowse.TabIndex = 8;
-            this.btnMemberBrowse.Text = "Browse";
+            this.btnMemberBrowse.Text = "Look Up Id";
             this.btnMemberBrowse.UseVisualStyleBackColor = true;
+            this.btnMemberBrowse.Click += new System.EventHandler(this.btnMemberBrowse_Click);
             // 
             // btnMemberUpdate
             // 
-            this.btnMemberUpdate.Enabled = false;
             this.btnMemberUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMemberUpdate.Location = new System.Drawing.Point(424, 524);
             this.btnMemberUpdate.Margin = new System.Windows.Forms.Padding(4);

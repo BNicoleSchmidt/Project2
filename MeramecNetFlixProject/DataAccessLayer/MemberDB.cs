@@ -46,6 +46,22 @@ namespace MeramecNetFlixProject.DataAccessLayer
             }
         }
 
+        public Member GetMemberById(int id)
+        {
+            var sqlStatement = "Select * from Member where id = @id";
+            using (var com = new SqlCommand(sqlStatement))
+            {
+                com.Parameters.AddWithValue("@id", id);
+                var rawData = GetQuery(com);
+                if (rawData.Count < 1)
+                {
+                    return null;
+                }
+                var item = rawData.First();
+                return MapMember(item);
+            }
+        }
+
         public bool AddMember(Member member)
         {
             const string sqlStatement = "Insert into Member (joindate, firstname, lastname, address, city, state, zipcode, phone, member_status, login_name, password, email, contact_method, subscription_id, photo, is_admin) values " +

@@ -21,7 +21,7 @@ namespace MeramecNetFlixProject.UI
             {
                 if (mySignIn.MemberLoggedIn.IsAdmin == true)
                 {
-                    btnUpdateGenre.Visible = true;
+                    btnUpdateMembers.Visible = true;
                     btnUpdateMovies.Visible = true;
                 }
 
@@ -41,8 +41,8 @@ namespace MeramecNetFlixProject.UI
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            GenreForm genreForm = new GenreForm();
-            genreForm.ShowDialog();
+            MemberDataEntry memberForm = new MemberDataEntry();
+            memberForm.ShowDialog();
         }
 
         private void btnUpdateMovies_Click(object sender, EventArgs e)
