@@ -30,23 +30,24 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlMovieScroller = new System.Windows.Forms.Panel();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblMovDescription = new System.Windows.Forms.Label();
             this.pnlDescription = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.btnOrderMovie = new System.Windows.Forms.Button();
             this.btnSimilarTitles = new System.Windows.Forms.Button();
+            this.btnOrderMovie = new System.Windows.Forms.Button();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMovieScroller.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlDescription.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -75,6 +76,19 @@
             this.pnlMovieScroller.Name = "pnlMovieScroller";
             this.pnlMovieScroller.Size = new System.Drawing.Size(424, 562);
             this.pnlMovieScroller.TabIndex = 1;
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel4.LinkColor = System.Drawing.Color.DeepSkyBlue;
+            this.linkLabel4.Location = new System.Drawing.Point(122, 578);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(188, 32);
+            this.linkLabel4.TabIndex = 1;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Star Wars IV: A New Hope\r\n(1977)";
+            this.linkLabel4.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             // 
             // linkLabel3
             // 
@@ -115,6 +129,17 @@
             this.linkLabel1.Text = "Hitchhikers Guide To The Galaxy\r\n(2005)\r\n\r\n";
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Black;
+            this.pictureBox4.BackgroundImage = global::MeramecNetFlixProject.Properties.Resources.StarWars2;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(11, 527);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(105, 128);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -158,29 +183,19 @@
             this.pnlDescription.Size = new System.Drawing.Size(468, 167);
             this.pnlDescription.TabIndex = 3;
             // 
-            // pictureBox4
+            // btnSimilarTitles
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Black;
-            this.pictureBox4.BackgroundImage = global::MeramecNetFlixProject.Properties.Resources.StarWars2;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(11, 527);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(105, 128);
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
-            // linkLabel4
-            // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.LinkColor = System.Drawing.Color.DeepSkyBlue;
-            this.linkLabel4.Location = new System.Drawing.Point(122, 578);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(188, 32);
-            this.linkLabel4.TabIndex = 1;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Star Wars IV: A New Hope\r\n(1977)";
-            this.linkLabel4.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSimilarTitles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSimilarTitles.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSimilarTitles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSimilarTitles.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnSimilarTitles.Location = new System.Drawing.Point(15, 141);
+            this.btnSimilarTitles.Name = "btnSimilarTitles";
+            this.btnSimilarTitles.Size = new System.Drawing.Size(96, 23);
+            this.btnSimilarTitles.TabIndex = 4;
+            this.btnSimilarTitles.Text = "Similar Titles";
+            this.btnSimilarTitles.UseVisualStyleBackColor = false;
+            this.btnSimilarTitles.Visible = false;
             // 
             // btnOrderMovie
             // 
@@ -197,19 +212,13 @@
             this.btnOrderMovie.UseVisualStyleBackColor = false;
             this.btnOrderMovie.Visible = false;
             // 
-            // btnSimilarTitles
+            // webBrowser1
             // 
-            this.btnSimilarTitles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSimilarTitles.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSimilarTitles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSimilarTitles.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnSimilarTitles.Location = new System.Drawing.Point(15, 141);
-            this.btnSimilarTitles.Name = "btnSimilarTitles";
-            this.btnSimilarTitles.Size = new System.Drawing.Size(96, 23);
-            this.btnSimilarTitles.TabIndex = 4;
-            this.btnSimilarTitles.Text = "Similar Titles";
-            this.btnSimilarTitles.UseVisualStyleBackColor = false;
-            this.btnSimilarTitles.Visible = false;
+            this.webBrowser1.Location = new System.Drawing.Point(431, 174);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(468, 389);
+            this.webBrowser1.TabIndex = 4;
             // 
             // BrowseInventory
             // 
@@ -218,6 +227,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = global::MeramecNetFlixProject.Properties.Resources._9;
             this.ClientSize = new System.Drawing.Size(902, 565);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.pnlDescription);
             this.Controls.Add(this.pnlMovieScroller);
             this.Name = "BrowseInventory";
@@ -226,11 +236,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlMovieScroller.ResumeLayout(false);
             this.pnlMovieScroller.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlDescription.ResumeLayout(false);
             this.pnlDescription.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -250,5 +260,6 @@
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.Button btnSimilarTitles;
         private System.Windows.Forms.Button btnOrderMovie;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 using MeramecNetFlixProject.Services;
 
 namespace MeramecNetFlixProject.UI
@@ -29,15 +30,17 @@ namespace MeramecNetFlixProject.UI
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             lblMovDescription.Text = "Arthur Dent (Martin Freeman) is trying to prevent his" +
-                                     " house from being bulldozed when his friend Ford Prefect " +
+                                     " house from being bulldozed when his friend \nFord Prefect " +
                                      "(Mos Def) whisks him into outer space. It turns out " +
-                                     "Ford is an alien who has just saved Arthur from Earth's" +
+                                     "Ford is an alien who has just \nsaved Arthur from Earth's" +
                                      " total annihilation. Ford introduces Arthur to his " +
-                                     "myriad friends, including many-headed President " +
+                                     "myriad friends, including \nmany-headed President " +
                                      "Zaphod Beeblebrox (Sam Rockwell) and sexy refugee " +
-                                     "Trillian (Zooey Deschanel). Arthur makes his way " +
+                                     "Trillian \n(Zooey Deschanel). Arthur makes his way " +
                                      "across the stars while seeking the meaning of life, " +
-                                     "or something close to it.";
+                                     "\nor something close to it.";
+
+
 
               
             btnOrderMovie.Visible = true;
