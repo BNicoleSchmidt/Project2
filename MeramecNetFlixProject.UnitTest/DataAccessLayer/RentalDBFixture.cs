@@ -26,12 +26,12 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
 
             Assert.That(actual.Count >= 2);
 
-            Assert.That(rental1.MemberNumber == 1);
-            Assert.That(rental1.MovieNumber == 1);
+            Assert.That(rental1.MemberId == 1);
+            Assert.That(rental1.MovieId == 1);
             Assert.That(rental1.MediaCheckoutDate.ToString(), Is.EqualTo("11/11/2016 12:00:00 AM"));
             Assert.That(rental1.MediaReturnDate.ToString(), Is.EqualTo("11/12/2016 12:00:00 AM"));
-            Assert.That(rental2.MemberNumber == 2);
-            Assert.That(rental2.MovieNumber == 2);
+            Assert.That(rental2.MemberId == 2);
+            Assert.That(rental2.MovieId == 2);
             Assert.That(rental2.MediaCheckoutDate.ToString(), Is.EqualTo("11/12/2016 12:00:00 AM"));
             Assert.IsNull(rental2.MediaReturnDate);
         }
@@ -41,7 +41,7 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
         {
             var actual = _testObject.GetRental(1);
 
-            Assert.That(actual.MemberNumber, Is.EqualTo(1));
+            Assert.That(actual.MemberId, Is.EqualTo(1));
         }
 
         [Test]
@@ -57,7 +57,7 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
 
             Assert.True(_testObject.AddRental(expected));
 
-            var actual = _testObject.GetRentals().First(m => m.MemberNumber == expected.MemberNumber && m.MovieNumber == expected.MovieNumber);
+            var actual = _testObject.GetRentals().First(m => m.MemberId == expected.MemberId && m.MovieId == expected.MovieId);
             Assert.That(actual.MediaCheckoutDate, Is.EqualTo(expected.MediaCheckoutDate));
             Assert.That(actual.MediaReturnDate, Is.EqualTo(expected.MediaReturnDate));
 
@@ -77,13 +77,13 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
             var old = RandomRental();
             _testObject.AddRental(old);
             var expected = RandomRental();
-            expected.Id = _testObject.GetRentals().First(m => m.MemberNumber == old.MemberNumber && m.MovieNumber == old.MovieNumber).Id;
+            expected.Id = _testObject.GetRentals().First(m => m.MemberId == old.MemberId && m.MovieId == old.MovieId).Id;
 
             Assert.True(_testObject.UpdateRental(expected));
 
             var actual = _testObject.GetRental(expected.Id);
-            Assert.That(actual.MemberNumber, Is.EqualTo(expected.MemberNumber));
-            Assert.That(actual.MovieNumber, Is.EqualTo(expected.MovieNumber));
+            Assert.That(actual.MemberId, Is.EqualTo(expected.MemberId));
+            Assert.That(actual.MovieId, Is.EqualTo(expected.MovieId));
             Assert.That(actual.MediaCheckoutDate, Is.EqualTo(expected.MediaCheckoutDate));
             Assert.That(actual.MediaReturnDate, Is.EqualTo(expected.MediaReturnDate));
         }
@@ -93,7 +93,7 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
         {
             var rental = RandomRental();
             _testObject.AddRental(rental);
-            var rentalToDelete = _testObject.GetRentals().First(m => m.MovieNumber == rental.MovieNumber && m.MemberNumber == rental.MemberNumber);
+            var rentalToDelete = _testObject.GetRentals().First(m => m.MovieId == rental.MovieId && m.MemberId == rental.MemberId);
 
             Assert.True(_testObject.DeleteRental(rentalToDelete.Id));
 
@@ -104,8 +104,8 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
         {
             return new Rental
             {
-                MovieNumber = Random.Int32(),
-                MemberNumber = Random.Int32(),
+                MovieId = Random.Int32(6),
+                MemberId = Random.Int32(4),
                 MediaCheckoutDate = Random.Date(),
                 MediaReturnDate = Random.Date()
             };

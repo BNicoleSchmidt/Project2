@@ -1,18 +1,19 @@
+IF OBJECT_ID('Rental', 'U') IS NOT NULL DROP TABLE Rental;
+IF OBJECT_ID('Movie', 'U') IS NOT NULL DROP TABLE Movie;
 IF OBJECT_ID('Genre', 'U') IS NOT NULL DROP TABLE Genre;
+IF OBJECT_ID('Member', 'U') IS NOT NULL DROP TABLE Member;
 IF OBJECT_ID('Contact_Method', 'U') IS NOT NULL DROP TABLE Contact_Method;
 IF OBJECT_ID('Subscription', 'U') IS NOT NULL DROP TABLE Subscription;
-IF OBJECT_ID('Movie', 'U') IS NOT NULL DROP TABLE Movie;
-IF OBJECT_ID('Member', 'U') IS NOT NULL DROP TABLE Member;
 IF OBJECT_ID('Vendor', 'U') IS NOT NULL DROP TABLE Vendor;
-IF OBJECT_ID('Rental', 'U') IS NOT NULL DROP TABLE Rental;
+
 
 create table Genre ( id int not null identity primary key, name varchar(30) not null unique);
 create table Contact_Method (id int not null identity primary key, name varchar(30) not null unique);
 create table Subscription ( id int not null identity primary key, name varchar(20) not null, cost money);
-create table Movie ( id int not null identity primary key, movie_title varchar(50) not null, description varchar(2000) not null, movie_year_made smallint not null, genre_id smallint not null, movie_rating char(10) not null, media_type varchar(10) not null, movie_retail_cost money not null, copies_on_hand smallint null, image varchar(50) null, trailer varchar(100) null);
-create table Member ( id int not null identity primary key, joindate datetime not null, firstname char(15) not null, lastname char(25) not null, address char(30) not null, city char(20) not null, state char(2) not null, zipcode char(5) not null, phone char(10) not null, member_status char(1) not null, login_name varchar(20) not null unique, password varchar(20) not null, email varchar(40) not null, contact_method int null, subscription_id int not null, photo varchar(50) null, is_admin bit not null);
+create table Movie ( id int not null identity primary key, movie_title varchar(50) not null, description varchar(2000) not null, movie_year_made smallint not null, genre_id int not null, movie_rating char(10) not null, media_type varchar(10) not null, movie_retail_cost money not null, copies_on_hand smallint null, image varchar(50) null, trailer varchar(100) null, constraint FK_Movie_GenreId foreign key (genre_id) references Genre (id));
+create table Member ( id int not null identity primary key, joindate datetime not null, firstname char(15) not null, lastname char(25) not null, address char(30) not null, city char(20) not null, state char(2) not null, zipcode char(5) not null, phone char(10) not null, member_status char(1) not null, login_name varchar(20) not null unique, password varchar(20) not null, email varchar(40) not null, contact_method int null, subscription_id int not null, photo varchar(50) null, is_admin bit not null, constraint FK_Member_ContactMethod foreign key (contact_method) references Contact_Method (id), constraint FK_Member_SubscriptionId foreign key (subscription_id) references Subscription (id));
 create table Vendor ( id int not null identity primary key, name varchar(30) not null unique);
-create table Rental ( id int not null identity primary key, movie_number int not null, member_number int not null, media_checkout_date datetime not null, media_return_date datetime null);
+create table Rental ( id int not null identity primary key, movie_id int not null, member_id int not null, media_checkout_date datetime not null, media_return_date datetime null, constraint FK_Rental_MovieId foreign key (movie_id) references Movie (id), constraint FK_Rental_MemberId foreign key (member_id) references Member (id));
 
 insert into Genre (name) values ('Childrens'),('Comedy'),('Horror'),('Drama'),('Action'),('Classic'),('Sci-fi'),('Documentary'),('Romance'),('Musical'),('Mystery'),('Fantasy');
 insert into Contact_Method (name) values ('Phone'),('Email'),('Facebook'),('Twitter');
@@ -27,7 +28,8 @@ insert into Movie (movie_title, description, movie_year_made, genre_id, movie_ra
 insert into Member (joindate, firstname, lastname, address, city, state, zipcode, phone, member_status, login_name, password, email, contact_method, subscription_id, is_admin) values
 	('2016-11-11', 'Nicole', 'Schmidt', '123 Any Street', 'Nowhere', 'NO', '12345', '1234567890', 'A', 'nicole', 'supersecret', 'n@s.co', 2, 1, 1),
 	('2016-11-12', 'Tim', 'Stuart', '456 Some Road', 'Awayfromhere', 'FU', '98765', '0987654321', 'I', 'tim', 'supersecret', 't@s.uk', 1, 2, 1),
-	('2010-01-01', 'John', 'Smith', '5 Street Lane', 'Citytown', 'ST', '87654', '7396748623', 'A', 'john', 'supersecret', 'j@s.gov', 1, 1, 0);
-insert into Rental (movie_number, member_number, media_checkout_date, media_return_date) values
+	('2010-01-01', 'John', 'Smith', '5 Street Lane', 'Citytown', 'ST', '87654', '7396748623', 'A', 'john', 'supersecret', 'j@s.gov', 1, 1, 0),
+	('2010-10-10', 'John', 'Smith', '5 Lane Street', 'Towncity', 'ST', '87642', '7396458623', 'A', 'smith', 'supersecret', 'j@s.org', 1, 1, 0);
+insert into Rental (movie_id, member_id, media_checkout_date, media_return_date) values
 	(1, 1, '2016-11-11', '2016-11-12'),
 	(2, 2, '2016-11-12', null);
