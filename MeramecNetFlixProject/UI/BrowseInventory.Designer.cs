@@ -54,7 +54,7 @@
             this.pnlDescription.Controls.Add(this.btnOrderMovie);
             this.pnlDescription.Controls.Add(this.lblMovDescription);
             this.pnlDescription.Location = new System.Drawing.Point(575, 1);
-            this.pnlDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDescription.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDescription.Name = "pnlDescription";
             this.pnlDescription.Size = new System.Drawing.Size(624, 206);
             this.pnlDescription.TabIndex = 3;
@@ -66,7 +66,7 @@
             this.btnSimilarTitles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSimilarTitles.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.btnSimilarTitles.Location = new System.Drawing.Point(20, 174);
-            this.btnSimilarTitles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSimilarTitles.Margin = new System.Windows.Forms.Padding(4);
             this.btnSimilarTitles.Name = "btnSimilarTitles";
             this.btnSimilarTitles.Size = new System.Drawing.Size(128, 28);
             this.btnSimilarTitles.TabIndex = 4;
@@ -82,7 +82,7 @@
             this.btnOrderMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrderMovie.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.btnOrderMovie.Location = new System.Drawing.Point(477, 174);
-            this.btnOrderMovie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrderMovie.Margin = new System.Windows.Forms.Padding(4);
             this.btnOrderMovie.Name = "btnOrderMovie";
             this.btnOrderMovie.Size = new System.Drawing.Size(135, 28);
             this.btnOrderMovie.TabIndex = 3;
@@ -93,7 +93,7 @@
             // webBrowser1
             // 
             this.webBrowser1.Location = new System.Drawing.Point(575, 214);
-            this.webBrowser1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.webBrowser1.Margin = new System.Windows.Forms.Padding(4);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(27, 25);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(624, 479);
@@ -117,7 +117,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.pnlDescription);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BrowseInventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meramec On-Line Movie Kiosk Rental form";

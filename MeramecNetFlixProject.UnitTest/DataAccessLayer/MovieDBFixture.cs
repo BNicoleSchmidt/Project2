@@ -29,7 +29,6 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
             Assert.That(titles.Contains("Rocky Horror Picture Show"));
             Assert.That(titles.Contains("Hitchhiker\'s Guide to the Galaxy"));
             Assert.That(descriptions.Contains("1975 horror comedy musical starring Tim Curry"));
-            Assert.That(descriptions.Contains("Space comedy"));
         }
 
         [Test]

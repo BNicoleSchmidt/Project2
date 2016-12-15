@@ -44,14 +44,14 @@ namespace MeramecNetFlixProject.DataAccessLayer
 
         public bool AddRental(Rental rental)
         {
-            const string sqlStatement = "Insert into Rental (movie_number, member_number, media_checkout_date, media_return_date) values " +
-                                        "(@movieNumber, @memberNumber, @mediaCheckoutDate, @mediaReturnDate)";
+            const string sqlStatement = "Insert into Rental (movie_id, member_id, media_checkout_date, media_return_date) values " +
+                                        "(@movieId, @memberId, @mediaCheckoutDate, @mediaReturnDate)";
             return DoNonQuery(rental, sqlStatement);
         }
 
         public bool UpdateRental(Rental rental)
         {
-            const string sqlStatement = "Update Rental set movie_number=@movieNumber, member_number=@memberNumber, media_checkout_date=@mediaCheckoutDate, " +
+            const string sqlStatement = "Update Rental set movie_id=@movieId, member_id=@memberId, media_checkout_date=@mediaCheckoutDate, " +
                                         "media_return_date=@mediaReturnDate where id=@id";
             return DoNonQuery(rental, sqlStatement);
         }
@@ -71,8 +71,8 @@ namespace MeramecNetFlixProject.DataAccessLayer
             var rental = new Rental
             {
                 Id = int.Parse(item[0].ToString()),
-                MovieNumber = int.Parse(item[1].ToString()),
-                MemberNumber = int.Parse(item[2].ToString()),
+                MovieId = int.Parse(item[1].ToString()),
+                MemberId = int.Parse(item[2].ToString()),
                 MediaCheckoutDate = (DateTime)item[3]
             };
             DateTime d;
@@ -88,8 +88,8 @@ namespace MeramecNetFlixProject.DataAccessLayer
             using (var com = new SqlCommand(sqlStatement))
             {
                 com.Parameters.AddWithValue("@id", rental.Id);
-                com.Parameters.AddWithValue("@movieNumber", rental.MovieNumber);
-                com.Parameters.AddWithValue("@memberNumber", rental.MemberNumber);
+                com.Parameters.AddWithValue("@movieId", rental.MovieId);
+                com.Parameters.AddWithValue("@memberId", rental.MemberId);
                 com.Parameters.AddWithValue("@mediaCheckoutDate", rental.MediaCheckoutDate);
                 com.Parameters.AddWithValue("@mediaReturnDate", rental.MediaReturnDate);
                 return NonQuery(com);

@@ -1,4 +1,7 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using MeramecNetFlixProject.BusinessObjects;
 using MeramecNetFlixProject.DataAccessLayer;
@@ -7,6 +10,7 @@ namespace MeramecNetFlixProject.UI
 {
     public partial class BrowseInventory : Form
     {
+        private readonly ICollection<Movie> _movies;
         public BrowseInventory()
         {
             InitializeComponent();
@@ -17,19 +21,16 @@ namespace MeramecNetFlixProject.UI
             flowLayoutPanel1.HorizontalScroll.Maximum = 0;
             flowLayoutPanel1.AutoScroll = true;
 
-            pnlDescription.AutoScroll = false;
-            pnlDescription.HorizontalScroll.Enabled = false;
-            pnlDescription.HorizontalScroll.Visible = false;
-            pnlDescription.HorizontalScroll.Maximum = 0;
-            pnlDescription.AutoScroll = true;
+            lblMovDescription.Size = new Size(450, 180);
+            lblMovDescription.AutoSize = false;
 
             var movieDb = new MovieDB();
-            var movies = movieDb.GetMovies();
-            foreach (var movie in movies)
+            _movies = movieDb.GetMovies();
+            foreach (var movie in _movies)
             {
-                var panel = new FlowLayoutPanel();
-                panel.Size = new Size(545, 140);
-                var title = new LinkLabel { Text = movie.MovieTitle + "\r\n(" + movie.MovieYearMade + ")", LinkBehavior = linkLabelLinkClicked(movie) };
+                var panel = new FlowLayoutPanel {Size = new Size(545, 140)};
+                var title = new LinkLabel { Text = movie.MovieTitle + Environment.NewLine + "(" + movie.MovieYearMade + ")", Name = movie.Id.ToString() };
+                title.LinkClicked += LinkLabelLinkClicked;
                 title.LinkColor = Color.DeepSkyBlue;
                 title.AutoSize = true;
                 title.Anchor = AnchorStyles.None;
@@ -44,25 +45,17 @@ namespace MeramecNetFlixProject.UI
             }
         }
 
-        private LinkBehavior linkLabelLinkClicked(Movie movie)
+        private void LinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            lblMovDescription.Text = "Arthur Dent (Martin Freeman) is trying to prevent his" +
-                                     " house from being bulldozed when his friend \nFord Prefect " +
-                                     "(Mos Def) whisks him into outer space. It turns out " +
-                                     "Ford is an alien who has just \nsaved Arthur from Earth's" +
-                                     " total annihilation. Ford introduces Arthur to his " +
-                                     "myriad friends, including \nmany-headed President " +
-                                     "Zaphod Beeblebrox (Sam Rockwell) and sexy refugee " +
-                                     "Trillian \n(Zooey Deschanel). Arthur makes his way " +
-                                     "across the stars while seeking the meaning of life, " +
-                                     "\nor something close to it.";
-
+            int id;
+            int.TryParse(((LinkLabel)sender).Name, out id);
+            var movie = _movies.First(x => x.Id == id);
+            lblMovDescription.Text = movie.Description;
             
-            webBrowser1.Navigate("http://www.youtube.com/v/" + "eLdiWe_HJv4" + "?html5=1");
+            webBrowser1.Navigate("http://www.youtube.com/v/" + movie.Trailer + "?html5=1");
 
             btnOrderMovie.Visible = true;
             btnSimilarTitles.Visible = true;
-            return LinkBehavior.SystemDefault;
         }
     }
 }

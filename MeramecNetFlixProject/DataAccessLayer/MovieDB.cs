@@ -75,7 +75,7 @@ namespace MeramecNetFlixProject.DataAccessLayer
                 Description = item[2].ToString().TrimEnd(),
                 MovieYearMade = int.Parse(item[3].ToString()),
                 GenreId = int.Parse(item[4].ToString()),
-                MovieRating = item[5].ToString(),
+                MovieRating = item[5].ToString().TrimEnd(),
                 MediaType = item[6].ToString().TrimEnd(),
                 MovieRetailCost = decimal.Parse(item[7].ToString()),
                 CopiesOnHand = int.Parse(item[8].ToString()),
