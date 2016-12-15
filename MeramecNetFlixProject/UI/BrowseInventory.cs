@@ -1,22 +1,21 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
-using MeramecNetFlixProject.Services;
+using MeramecNetFlixProject.BusinessObjects;
+using MeramecNetFlixProject.DataAccessLayer;
 
 namespace MeramecNetFlixProject.UI
 {
     public partial class BrowseInventory : Form
     {
-        private MovieService _movieService;
-
         public BrowseInventory()
         {
             InitializeComponent();
 
-            pnlMovieScroller.AutoScroll = false;
-            pnlMovieScroller.HorizontalScroll.Enabled = false;
-            pnlMovieScroller.HorizontalScroll.Visible = false;
-            pnlMovieScroller.HorizontalScroll.Maximum = 0;
-            pnlMovieScroller.AutoScroll = true;
+            flowLayoutPanel1.AutoScroll = false;
+            flowLayoutPanel1.HorizontalScroll.Enabled = false;
+            flowLayoutPanel1.HorizontalScroll.Visible = false;
+            flowLayoutPanel1.HorizontalScroll.Maximum = 0;
+            flowLayoutPanel1.AutoScroll = true;
 
             pnlDescription.AutoScroll = false;
             pnlDescription.HorizontalScroll.Enabled = false;
@@ -24,10 +23,28 @@ namespace MeramecNetFlixProject.UI
             pnlDescription.HorizontalScroll.Maximum = 0;
             pnlDescription.AutoScroll = true;
 
-            _movieService = new MovieService();
+            var movieDb = new MovieDB();
+            var movies = movieDb.GetMovies();
+            foreach (var movie in movies)
+            {
+                var panel = new FlowLayoutPanel();
+                panel.Size = new Size(545, 140);
+                var title = new LinkLabel { Text = movie.MovieTitle + "\r\n(" + movie.MovieYearMade + ")", LinkBehavior = linkLabelLinkClicked(movie) };
+                title.LinkColor = Color.DeepSkyBlue;
+                title.AutoSize = true;
+                title.Anchor = AnchorStyles.None;
+                title.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+                var image = new PictureBox();
+                image.ImageLocation = "Resources/" + movie.Image;
+                image.SizeMode = PictureBoxSizeMode.StretchImage;
+                image.Size = new Size(105, 140);
+                panel.Controls.Add(image);
+                panel.Controls.Add(title);
+                flowLayoutPanel1.Controls.Add(panel);
+            }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private LinkBehavior linkLabelLinkClicked(Movie movie)
         {
             lblMovDescription.Text = "Arthur Dent (Martin Freeman) is trying to prevent his" +
                                      " house from being bulldozed when his friend \nFord Prefect " +
@@ -40,11 +57,12 @@ namespace MeramecNetFlixProject.UI
                                      "across the stars while seeking the meaning of life, " +
                                      "\nor something close to it.";
 
+            
+            webBrowser1.Navigate("http://www.youtube.com/v/" + "eLdiWe_HJv4" + "?html5=1");
 
-
-              
             btnOrderMovie.Visible = true;
             btnSimilarTitles.Visible = true;
+            return LinkBehavior.SystemDefault;
         }
     }
 }
