@@ -17,19 +17,7 @@ namespace MeramecNetFlixProject.UI
             InitializeComponent();
             _memberDb = new MemberDB();
             _currentMember = new Member();
-            try
-            {
-                String connectionString = "Data Source=198.209.220.125;Initial Catalog=Teamc;User ID=teamc;Password=teamc";
-                var dataAdapter = new SqlDataAdapter("Select * from Member", connectionString);
-                var table = new DataTable {Locale = System.Globalization.CultureInfo.InvariantCulture};
-                dataAdapter.Fill(table);
-                dataGridView1.DataSource = table;
-                dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
-            }
-            catch (SqlException e)
-            {
-                MessageBox.Show(@"SQL Error: " +  e.Message);
-            }
+            LoadTable();
         }
 
         public MemberDataEntry(Member currentMember)
@@ -79,6 +67,7 @@ namespace MeramecNetFlixProject.UI
                 if (_memberDb.UpdateMember(_currentMember))
                 {
                     errorLabel.Text = "Update success";
+                    LoadTable();
                 }
             }
         }
@@ -201,6 +190,23 @@ namespace MeramecNetFlixProject.UI
             txtState.Text = _currentMember.State;
             txtZipCode.Text = _currentMember.Zipcode.ToString();
             txtPhone.Text = _currentMember.Phone;
+        }
+
+        private void LoadTable()
+        {
+            try
+            {
+                String connectionString = "Data Source=198.209.220.125;Initial Catalog=Teamc;User ID=teamc;Password=teamc";
+                var dataAdapter = new SqlDataAdapter("Select * from Member", connectionString);
+                var table = new DataTable { Locale = System.Globalization.CultureInfo.InvariantCulture };
+                dataAdapter.Fill(table);
+                dataGridView1.DataSource = table;
+                dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(@"SQL Error: " + e.Message);
+            }
         }
     }
 }

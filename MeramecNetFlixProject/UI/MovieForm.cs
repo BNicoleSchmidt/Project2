@@ -1,18 +1,19 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 using MeramecNetFlixProject.BusinessObjects;
 using MeramecNetFlixProject.DataAccessLayer;
-using MeramecNetFlixProject.Services;
 
 namespace MeramecNetFlixProject.UI
 {
     public partial class MovieForm : Form
     {
-        private MovieService _movieService;
+        private readonly MovieDB _movieDb;
         public MovieForm()
         {
             InitializeComponent();
-            _movieService = new MovieService();
+            _movieDb = new MovieDB();
             cboGenre.Items.Insert(0, @"Select Genre");
             var genreDb = new GenreDB();
             foreach (var genre in genreDb.GetGenres())
@@ -37,6 +38,8 @@ namespace MeramecNetFlixProject.UI
                 cboMediaType.Items.Add(type);
             }
             cboMediaType.SelectedIndex = 0;
+
+            LoadTable();
         }
 
         private void MovieForm_Load(object sender, EventArgs e)
@@ -58,9 +61,11 @@ namespace MeramecNetFlixProject.UI
         {
             var movie = ValidateForm();
             if (movie == null) return;
-            if (_movieService.AddMovie(movie))
+            if (_movieDb.AddMovie(movie))
             {
                 Clear();
+                LoadTable();
+                errorLabel.Text = @"Movie added successfully.";
             }
         }
 
@@ -148,6 +153,22 @@ namespace MeramecNetFlixProject.UI
             cboGenre.SelectedIndex = 0;
             cboMediaType.SelectedIndex = 0;
             cboRating.SelectedIndex = 0;
+        }
+        private void LoadTable()
+        {
+            try
+            {
+                String connectionString = "Data Source=198.209.220.125;Initial Catalog=Teamc;User ID=teamc;Password=teamc";
+                var dataAdapter = new SqlDataAdapter("Select * from Movie", connectionString);
+                var table = new DataTable { Locale = System.Globalization.CultureInfo.InvariantCulture };
+                dataAdapter.Fill(table);
+                dataGridView1.DataSource = table;
+                dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(@"SQL Error: " + e.Message);
+            }
         }
     }
 }
