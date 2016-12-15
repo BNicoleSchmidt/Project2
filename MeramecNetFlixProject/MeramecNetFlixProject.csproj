@@ -60,6 +60,11 @@
     <Compile Include="DataAccessLayer\MemberDB.cs" />
     <Compile Include="Exceptions\DuplicateEntryException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Services\MovieService.cs" />
     <Compile Include="Services\MemberService.cs" />
     <Compile Include="UI\AdminSignIn.cs">
@@ -123,14 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UI\MovieForm.resx">
       <DependentUpon>MovieForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,24 +166,60 @@
     <None Include="Resources\9.jpg" />
     <None Include="Resources\4.jpg" />
     <None Include="Resources\blue-fractal-background.jpg" />
-    <Content Include="UI\Images\Godfather.jpeg" />
-    <Content Include="UI\Images\Godfather2.jpeg" />
-    <Content Include="UI\Images\Godfather3.jpeg" />
-    <Content Include="UI\Images\Godfather4.jpeg" />
-    <Content Include="UI\Images\Hitchhikers.jpg" />
-    <Content Include="UI\Images\KungFury.jpeg" />
-    <Content Include="UI\Images\KungFury2.jpeg" />
-    <Content Include="UI\Images\KungFury3.jpeg" />
-    <Content Include="UI\Images\kungFury4.jpeg" />
-    <Content Include="UI\Images\PirncessBride3.jpeg" />
-    <Content Include="UI\Images\PrincessBride.jpeg" />
-    <Content Include="UI\Images\PrincessBride2.jpeg" />
-    <Content Include="UI\Images\PrincessBride4.jpeg" />
-    <Content Include="UI\Images\RockyHorror.jpg" />
-    <Content Include="UI\Images\StarWars.jpeg" />
-    <Content Include="UI\Images\StarWars2.jpeg" />
-    <Content Include="UI\Images\StarWars3.jpeg" />
-    <Content Include="UI\Images\StarWars4.jpeg" />
+    <EmbeddedResource Include="Resources\Godfather.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Godfather2.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Godfather3.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Godfather4.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Hitchhikers.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\KungFury.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\KungFury2.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\KungFury3.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\kungFury4.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PirncessBride3.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PrincessBride.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PrincessBride2.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PrincessBride4.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RockyHorror.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\StarWars.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\StarWars2.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\StarWars3.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\StarWars4.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="UI\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
