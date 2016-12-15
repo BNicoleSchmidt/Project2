@@ -1,13 +1,10 @@
-﻿using System.Drawing;
+﻿using System;
 using System.Windows.Forms;
-using MeramecNetFlixProject.Services;
 
 namespace MeramecNetFlixProject.UI
 {
     public partial class BrowseInventory : Form
     {
-        private MovieService _movieService;
-
         public BrowseInventory()
         {
             InitializeComponent();
@@ -23,8 +20,6 @@ namespace MeramecNetFlixProject.UI
             pnlDescription.HorizontalScroll.Visible = false;
             pnlDescription.HorizontalScroll.Maximum = 0;
             pnlDescription.AutoScroll = true;
-
-            _movieService = new MovieService();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -40,9 +35,9 @@ namespace MeramecNetFlixProject.UI
                                      "across the stars while seeking the meaning of life, " +
                                      "\nor something close to it.";
 
+            
+            webBrowser1.Navigate("http://www.youtube.com/v/" + "8uCEeCUecNI" + "?html5=1");
 
-
-              
             btnOrderMovie.Visible = true;
             btnSimilarTitles.Visible = true;
         }
