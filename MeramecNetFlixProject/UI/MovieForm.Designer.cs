@@ -38,14 +38,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cboGenre = new System.Windows.Forms.ComboBox();
-            this.txtRentalCost = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cboMediaType = new System.Windows.Forms.ComboBox();
             this.cboRating = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtCopiesOnHand = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtImageName = new System.Windows.Forms.TextBox();
@@ -154,14 +152,6 @@
             this.cboGenre.Size = new System.Drawing.Size(160, 24);
             this.cboGenre.TabIndex = 4;
             // 
-            // txtRentalCost
-            // 
-            this.txtRentalCost.Location = new System.Drawing.Point(371, 246);
-            this.txtRentalCost.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRentalCost.Name = "txtRentalCost";
-            this.txtRentalCost.Size = new System.Drawing.Size(132, 22);
-            this.txtRentalCost.TabIndex = 8;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -221,16 +211,6 @@
             this.label8.Size = new System.Drawing.Size(80, 17);
             this.label8.TabIndex = 2;
             this.label8.Text = "Retail Cost:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(280, 250);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 17);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Rental Cost:";
             // 
             // txtCopiesOnHand
             // 
@@ -319,6 +299,7 @@
             this.btnMovieFind.TabIndex = 12;
             this.btnMovieFind.Text = "Find";
             this.btnMovieFind.UseVisualStyleBackColor = true;
+            this.btnMovieFind.Click += new System.EventHandler(this.btnMovieFind_Click);
             // 
             // btnMovieUpdate
             // 
@@ -341,6 +322,7 @@
             this.btnMovieDelete.TabIndex = 14;
             this.btnMovieDelete.Text = "Delete";
             this.btnMovieDelete.UseVisualStyleBackColor = true;
+            this.btnMovieDelete.Click += new System.EventHandler(this.btnMovieDelete_Click);
             // 
             // btnMovieClear
             // 
@@ -395,7 +377,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
@@ -405,7 +386,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtYearMade);
             this.Controls.Add(this.txtCopiesOnHand);
-            this.Controls.Add(this.txtRentalCost);
             this.Controls.Add(this.txtTrailerLink);
             this.Controls.Add(this.txtImageName);
             this.Controls.Add(this.txtRetailCost);
@@ -436,14 +416,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboGenre;
-        private System.Windows.Forms.TextBox txtRentalCost;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cboMediaType;
         private System.Windows.Forms.ComboBox cboRating;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtCopiesOnHand;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtImageName;

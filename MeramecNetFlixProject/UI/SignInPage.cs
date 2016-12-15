@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using MeramecNetFlixProject.BusinessObjects;
+using MeramecNetFlixProject.DataAccessLayer;
 
 
 namespace MeramecNetFlixProject.UI
@@ -39,9 +40,8 @@ namespace MeramecNetFlixProject.UI
             if (memberService.ValidateLogin(txtLogin.Text, txtPassword.Text))
             {
                 IsLoggedIn = true;
-
-                MemberLoggedIn =  memberService.GetMember(txtLogin.Text);
-
+                var memberDb = new MemberDB();
+                MemberLoggedIn =  memberDb.GetMember(txtLogin.Text);
                 
                 Close();
             }
