@@ -311,6 +311,7 @@
             this.btnMovieUpdate.TabIndex = 13;
             this.btnMovieUpdate.Text = "Update";
             this.btnMovieUpdate.UseVisualStyleBackColor = true;
+            this.btnMovieUpdate.Click += new System.EventHandler(this.btnMovieUpdate_Click);
             // 
             // btnMovieDelete
             // 
