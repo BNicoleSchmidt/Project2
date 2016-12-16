@@ -43,10 +43,7 @@ namespace MeramecNetFlixProject.UI
             LoadTable();
         }
 
-        private void MovieForm_Load(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnMovieExit_Click(object sender, EventArgs e)
         {
