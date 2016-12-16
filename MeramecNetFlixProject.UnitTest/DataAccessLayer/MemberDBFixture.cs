@@ -69,7 +69,6 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
             Assert.That(actual.Email, Is.EqualTo(expected.Email));
             Assert.That(actual.ContactMethod, Is.EqualTo(expected.ContactMethod));
             Assert.That(actual.SubscriptionId, Is.EqualTo(expected.SubscriptionId));
-            Assert.That(actual.Photo, Is.EqualTo(expected.Photo));
             Assert.That(actual.IsAdmin, Is.EqualTo(expected.IsAdmin));
         }
 
@@ -108,7 +107,6 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
             Assert.That(actual.Email, Is.EqualTo(expected.Email));
             Assert.That(actual.ContactMethod, Is.EqualTo(expected.ContactMethod));
             Assert.That(actual.SubscriptionId, Is.EqualTo(expected.SubscriptionId));
-            Assert.That(actual.Photo, Is.EqualTo(expected.Photo));
             Assert.That(actual.IsAdmin, Is.EqualTo(expected.IsAdmin));
         }
 
@@ -142,7 +140,6 @@ namespace MeramecNetFlixProject.UnitTest.DataAccessLayer
                 Email = Random.String(),
                 ContactMethod = Random.Int32(100) > 50 ? 1 : 2,
                 SubscriptionId = Random.Int32(100) > 50 ? 1 : 2,
-                Photo = Random.String(30),
                 IsAdmin = Random.Int32(10) > 5
             };
         }
