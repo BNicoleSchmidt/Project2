@@ -84,6 +84,12 @@ namespace MeramecNetFlixProject.UI
                 return null;
             }
             _currentMember.ContactMethod = rdoEmail.Checked ? 1 : rdoPhoneText.Checked ? 2 : rdoFaceBook.Checked ? 3 : 4;
+            if (!rdoStandard.Checked && !rdoPlus.Checked && !rdoTrial.Checked && !rdoStudent.Checked)
+            {
+                errorLabel.Text = @"Must have subscription type.";
+                return null;
+            }
+            _currentMember.SubscriptionId = rdoStandard.Checked ? 1 : rdoPlus.Checked ? 2 : rdoTrial.Checked ? 3 : 4;
             if (string.IsNullOrWhiteSpace(txtFirstname.Text))
             {
                 errorLabel.Text = @"Must have first name.";
