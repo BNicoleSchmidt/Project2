@@ -1,5 +1,4 @@
 ﻿using System;
-using MeramecNetFlixProject.BusinessObjects;
 using MeramecNetFlixProject.DataAccessLayer;
 
 namespace MeramecNetFlixProject.Services
@@ -22,11 +21,5 @@ namespace MeramecNetFlixProject.Services
 
             return string.Equals(password, member.Password, StringComparison.Ordinal);
         }
-
-        public Member GetMember(string username)
-        {
-            return _memberDb.GetMember(username);
-        }
-
     }
  }

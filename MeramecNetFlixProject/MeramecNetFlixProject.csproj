@@ -65,8 +65,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Services\MovieService.cs" />
     <Compile Include="Services\MemberService.cs" />
+    <Compile Include="TeamcDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TeamcDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UI\AdminSignIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +121,7 @@
     <Compile Include="UI\Favorites.Designer.cs">
       <DependentUpon>Favorites.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="UI\AdminSignIn.resx">
       <DependentUpon>AdminSignIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +160,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TeamcDataSet.xsc">
+      <DependentUpon>TeamcDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TeamcDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TeamcDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TeamcDataSet.xss">
+      <DependentUpon>TeamcDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

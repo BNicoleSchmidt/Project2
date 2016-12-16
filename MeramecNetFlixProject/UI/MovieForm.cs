@@ -10,6 +10,7 @@ namespace MeramecNetFlixProject.UI
     public partial class MovieForm : Form
     {
         private readonly MovieDB _movieDb;
+        private Movie _currentMovie;
         public MovieForm()
         {
             InitializeComponent();
@@ -144,7 +145,6 @@ namespace MeramecNetFlixProject.UI
             txtMovieNumber.Text = String.Empty;
             txtMovieTitle.Text = String.Empty;
             txtMovieDescription.Text = String.Empty;
-            txtRentalCost.Text = String.Empty;
             txtRetailCost.Text = String.Empty;
             txtCopiesOnHand.Text = String.Empty;
             txtImageName.Text = String.Empty;
@@ -153,6 +153,7 @@ namespace MeramecNetFlixProject.UI
             cboGenre.SelectedIndex = 0;
             cboMediaType.SelectedIndex = 0;
             cboRating.SelectedIndex = 0;
+            _currentMovie = null;
         }
         private void LoadTable()
         {
@@ -169,6 +170,61 @@ namespace MeramecNetFlixProject.UI
             {
                 MessageBox.Show(@"SQL Error: " + e.Message);
             }
+        }
+
+        private void btnMovieDelete_Click(object sender, EventArgs e)
+        {
+            int id;
+            if (!int.TryParse(txtMovieNumber.Text, out id))
+            {
+                errorLabel.Text = @"Enter valid Movie Number.";
+                return;
+            }
+            _currentMovie = _movieDb.GetMovie(id);
+            if (_currentMovie == null)
+            {
+                errorLabel.Text = "Movie " + id + " does not exist.";
+                return;
+            }
+            if (_movieDb.DeleteMovie(id))
+            {
+                errorLabel.Text = "Movie " + id + " deleted successfully.";
+                return;
+            }
+            errorLabel.Text = "Could not delete Movie " + id + ".";
+        }
+
+        private void btnMovieFind_Click(object sender, EventArgs e)
+        {
+            int id;
+            if (!int.TryParse(txtMovieNumber.Text, out id))
+            {
+                errorLabel.Text = @"Enter valid Movie Number.";
+                return;
+            }
+            _currentMovie = _movieDb.GetMovie(id);
+            if (_currentMovie == null)
+            {
+                errorLabel.Text = "Movie " + id + " does not exist.";
+                return;
+            }
+            LoadMovie();
+            errorLabel.Text = "";
+        }
+
+        private void LoadMovie()
+        {
+            txtMovieNumber.Text = _currentMovie.Id.ToString();
+            txtMovieTitle.Text = _currentMovie.MovieTitle;
+            txtMovieDescription.Text = _currentMovie.Description;
+            txtYearMade.Text = _currentMovie.MovieYearMade.ToString();
+            txtRetailCost.Text = _currentMovie.MovieRetailCost.ToString();
+            txtCopiesOnHand.Text = _currentMovie.CopiesOnHand.ToString();
+            txtImageName.Text = _currentMovie.Image;
+            txtTrailerLink.Text = _currentMovie.Trailer;
+            cboGenre.SelectedIndex = _currentMovie.GenreId;
+            cboRating.SelectedValue = _currentMovie.MovieRating;
+            cboMediaType.SelectedValue = _currentMovie.MediaType;
         }
     }
 }
