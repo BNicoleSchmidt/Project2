@@ -44,6 +44,7 @@ namespace MeramecNetFlixProject.UI
             btnMemberAdd.Enabled = false;
             btnMemberBrowse.Enabled = false;
             btnMemberUpdate.Enabled = true;
+            btnMemberDelete.Enabled = false;
             LoadMember();
         }
 
