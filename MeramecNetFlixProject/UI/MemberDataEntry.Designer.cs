@@ -74,10 +74,16 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.grpSubscription = new System.Windows.Forms.GroupBox();
+            this.rdoStandard = new System.Windows.Forms.RadioButton();
+            this.rdoPlus = new System.Windows.Forms.RadioButton();
+            this.rdoTrial = new System.Windows.Forms.RadioButton();
+            this.rdoStudent = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.grpSubscription.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -447,6 +453,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(17, 372);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1193, 132);
             this.dataGridView1.TabIndex = 7;
@@ -550,11 +557,74 @@
             this.errorLabel.Size = new System.Drawing.Size(0, 17);
             this.errorLabel.TabIndex = 9;
             // 
+            // grpSubscription
+            // 
+            this.grpSubscription.Controls.Add(this.rdoStudent);
+            this.grpSubscription.Controls.Add(this.rdoTrial);
+            this.grpSubscription.Controls.Add(this.rdoPlus);
+            this.grpSubscription.Controls.Add(this.rdoStandard);
+            this.grpSubscription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpSubscription.Location = new System.Drawing.Point(561, 87);
+            this.grpSubscription.Name = "grpSubscription";
+            this.grpSubscription.Size = new System.Drawing.Size(167, 161);
+            this.grpSubscription.TabIndex = 10;
+            this.grpSubscription.TabStop = false;
+            this.grpSubscription.Text = "Subscription Type";
+            // 
+            // rdoStandard
+            // 
+            this.rdoStandard.AutoSize = true;
+            this.rdoStandard.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoStandard.Location = new System.Drawing.Point(7, 23);
+            this.rdoStandard.Name = "rdoStandard";
+            this.rdoStandard.Size = new System.Drawing.Size(125, 21);
+            this.rdoStandard.TabIndex = 0;
+            this.rdoStandard.TabStop = true;
+            this.rdoStandard.Text = "Standard ($10)";
+            this.rdoStandard.UseVisualStyleBackColor = true;
+            // 
+            // rdoPlus
+            // 
+            this.rdoPlus.AutoSize = true;
+            this.rdoPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoPlus.Location = new System.Drawing.Point(7, 50);
+            this.rdoPlus.Name = "rdoPlus";
+            this.rdoPlus.Size = new System.Drawing.Size(94, 21);
+            this.rdoPlus.TabIndex = 1;
+            this.rdoPlus.TabStop = true;
+            this.rdoPlus.Text = "Plus ($15)";
+            this.rdoPlus.UseVisualStyleBackColor = true;
+            // 
+            // rdoTrial
+            // 
+            this.rdoTrial.AutoSize = true;
+            this.rdoTrial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoTrial.Location = new System.Drawing.Point(7, 77);
+            this.rdoTrial.Name = "rdoTrial";
+            this.rdoTrial.Size = new System.Drawing.Size(87, 21);
+            this.rdoTrial.TabIndex = 2;
+            this.rdoTrial.TabStop = true;
+            this.rdoTrial.Text = "Trial ($0)";
+            this.rdoTrial.UseVisualStyleBackColor = true;
+            // 
+            // rdoStudent
+            // 
+            this.rdoStudent.AutoSize = true;
+            this.rdoStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoStudent.Location = new System.Drawing.Point(7, 104);
+            this.rdoStudent.Name = "rdoStudent";
+            this.rdoStudent.Size = new System.Drawing.Size(108, 21);
+            this.rdoStudent.TabIndex = 3;
+            this.rdoStudent.TabStop = true;
+            this.rdoStudent.Text = "Student ($5)";
+            this.rdoStudent.UseVisualStyleBackColor = true;
+            // 
             // MemberDataEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1227, 603);
+            this.Controls.Add(this.grpSubscription);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.btnMemberExit);
             this.Controls.Add(this.btnMemberClear);
@@ -604,6 +674,8 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.grpSubscription.ResumeLayout(false);
+            this.grpSubscription.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -656,5 +728,10 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.GroupBox grpSubscription;
+        private System.Windows.Forms.RadioButton rdoStudent;
+        private System.Windows.Forms.RadioButton rdoTrial;
+        private System.Windows.Forms.RadioButton rdoPlus;
+        private System.Windows.Forms.RadioButton rdoStandard;
     }
 }
