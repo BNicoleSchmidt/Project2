@@ -54,6 +54,121 @@ namespace MeramecNetFlixProject.UI
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            clear();
+        }
+
+        private void btnMemberUpdate_Click(object sender, EventArgs e)
+        {
+            if (ValidateForm() != null)
+            {
+                if (_memberDb.UpdateMember(_currentMember))
+                {
+                    errorLabel.Text = "Update success";
+                    LoadTable();
+                }
+            }
+        }
+
+        private Member ValidateForm()
+        {
+            if (!rdoActive.Checked && !rdoInactive.Checked)
+            {
+                errorLabel.Text = @"Must be active or inactive.";
+                return null;
+            }
+            _currentMember.MemberStatus = rdoActive.Checked ? "A" : "I";
+            if (!rdoEmail.Checked && !rdoPhoneText.Checked && !rdoFaceBook.Checked && !rdoTwitter.Checked)
+            {
+                errorLabel.Text = @"Must have contact method.";
+                return null;
+            }
+            _currentMember.ContactMethod = rdoEmail.Checked ? 1 : rdoPhoneText.Checked ? 2 : rdoFaceBook.Checked ? 3 : 4;
+            if (string.IsNullOrWhiteSpace(txtFirstname.Text))
+            {
+                errorLabel.Text = @"Must have first name.";
+                return null;
+            }
+            _currentMember.FirstName = txtFirstname.Text;
+            if (string.IsNullOrWhiteSpace(txtLastName.Text))
+            {
+                errorLabel.Text = @"Must have last name.";
+                return null;
+            }
+            _currentMember.LastName = txtLastName.Text;
+            if (string.IsNullOrWhiteSpace(txtAddress.Text))
+            {
+                errorLabel.Text = @"Must have state.";
+                return null;
+            }
+            _currentMember.Address = txtAddress.Text;
+            if (string.IsNullOrWhiteSpace(txtCity.Text))
+            {
+                errorLabel.Text = @"Must have city.";
+                return null;
+            }
+            _currentMember.City = txtCity.Text;
+            if (string.IsNullOrWhiteSpace(txtState.Text))
+            {
+                errorLabel.Text = @"Must have state.";
+                return null;
+            }
+            _currentMember.State = txtState.Text;
+            int zip;
+            if (string.IsNullOrWhiteSpace(txtZipCode.Text) || !int.TryParse(txtZipCode.Text, out zip))
+            {
+                errorLabel.Text = @"Must have valid zipcode.";
+                return null;
+            }
+            _currentMember.Zipcode = zip;
+            if (string.IsNullOrWhiteSpace(txtPhone.Text))
+            {
+                errorLabel.Text = @"Must have phone number.";
+                return null;
+            }
+            _currentMember.Phone = txtPhone.Text;
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                errorLabel.Text = @"Must have email.";
+                return null;
+            }
+            _currentMember.Email = txtEmail.Text;
+            if (string.IsNullOrWhiteSpace(txtLoginName.Text))
+            {
+                errorLabel.Text = @"Must have login name.";
+                return null;
+            }
+            _currentMember.LoginName = txtLoginName.Text;
+            if (!string.IsNullOrWhiteSpace(txtPassword.Text) || !string.IsNullOrWhiteSpace(txtConfirmPassword.Text))
+            {
+                if (!string.Equals(txtPassword.Text, txtConfirmPassword.Text, StringComparison.Ordinal))
+                {
+                    errorLabel.Text = @"Passwords do not match.";
+                    return null;
+                }
+                _currentMember.Password = txtPassword.Text;
+            }
+            //var member = new Member
+            //{
+            //    FirstName = txtFirstname.Text,
+            //    LastName = txtLastName.Text,
+            //    Address = txtAddress.Text,
+            //    City = txtCity.Text,
+            //    State = txtState.Text,
+            //    Zipcode = zip,
+            //    Phone = txtPhone.Text,
+            //    Email = txtEmail.Text,
+            //    Password = txtPassword.Text,
+            //    LoginName =
+
+
+
+            //};
+
+            return _currentMember;
+        }
+
+        private void clear()
+        {
             rdoActive.Checked = false;
             rdoInactive.Checked = false;
             rdoEmail.Checked = false;
@@ -71,99 +186,6 @@ namespace MeramecNetFlixProject.UI
             txtLoginName.Text = String.Empty;
             txtPassword.Text = String.Empty;
             txtConfirmPassword.Text = String.Empty;
-        }
-
-        private void btnMemberUpdate_Click(object sender, EventArgs e)
-        {
-            if (ValidateForm())
-            {
-                if (_memberDb.UpdateMember(_currentMember))
-                {
-                    errorLabel.Text = "Update success";
-                    LoadTable();
-                }
-            }
-        }
-
-        private bool ValidateForm()
-        {
-            if (!rdoActive.Checked && !rdoInactive.Checked)
-            {
-                errorLabel.Text = @"Must be active or inactive.";
-                return false;
-            }
-            _currentMember.MemberStatus = rdoActive.Checked ? "A" : "I";
-            if (!rdoEmail.Checked && !rdoPhoneText.Checked && !rdoFaceBook.Checked && !rdoTwitter.Checked)
-            {
-                errorLabel.Text = @"Must have contact method.";
-                return false;
-            }
-            _currentMember.ContactMethod = rdoEmail.Checked ? 1 : rdoPhoneText.Checked ? 2 : rdoFaceBook.Checked ? 3 : 4;
-            if (string.IsNullOrWhiteSpace(txtFirstname.Text))
-            {
-                errorLabel.Text = @"Must have first name.";
-                return false;
-            }
-            _currentMember.FirstName = txtFirstname.Text;
-            if (string.IsNullOrWhiteSpace(txtLastName.Text))
-            {
-                errorLabel.Text = @"Must have last name.";
-                return false;
-            }
-            _currentMember.LastName = txtLastName.Text;
-            if (string.IsNullOrWhiteSpace(txtAddress.Text))
-            {
-                errorLabel.Text = @"Must have state.";
-                return false;
-            }
-            _currentMember.Address = txtAddress.Text;
-            if (string.IsNullOrWhiteSpace(txtCity.Text))
-            {
-                errorLabel.Text = @"Must have city.";
-                return false;
-            }
-            _currentMember.City = txtCity.Text;
-            if (string.IsNullOrWhiteSpace(txtState.Text))
-            {
-                errorLabel.Text = @"Must have state.";
-                return false;
-            }
-            _currentMember.State = txtState.Text;
-            int zip;
-            if (string.IsNullOrWhiteSpace(txtZipCode.Text) || !int.TryParse(txtZipCode.Text, out zip))
-            {
-                errorLabel.Text = @"Must have valid zipcode.";
-                return false;
-            }
-            _currentMember.Zipcode = zip;
-            if (string.IsNullOrWhiteSpace(txtPhone.Text))
-            {
-                errorLabel.Text = @"Must have phone number.";
-                return false;
-            }
-            _currentMember.Phone = txtPhone.Text;
-            if (string.IsNullOrWhiteSpace(txtEmail.Text))
-            {
-                errorLabel.Text = @"Must have email.";
-                return false;
-            }
-            _currentMember.Email = txtEmail.Text;
-            if (string.IsNullOrWhiteSpace(txtLoginName.Text))
-            {
-                errorLabel.Text = @"Must have login name.";
-                return false;
-            }
-            _currentMember.LoginName = txtLoginName.Text;
-            if (!string.IsNullOrWhiteSpace(txtPassword.Text) || !string.IsNullOrWhiteSpace(txtConfirmPassword.Text))
-            {
-                if (!string.Equals(txtPassword.Text, txtConfirmPassword.Text, StringComparison.Ordinal))
-                {
-                    errorLabel.Text = @"Passwords do not match.";
-                    return false;
-                }
-                _currentMember.Password = txtPassword.Text;
-            }
-            return true;
         }
 
         private void btnMemberBrowse_Click(object sender, EventArgs e)
@@ -220,6 +242,20 @@ namespace MeramecNetFlixProject.UI
             {
                 MessageBox.Show(@"SQL Error: " + e.Message);
             }
+        }
+
+        private void btnMemberAdd_Click(object sender, EventArgs e)
+        {
+            var newMember = ValidateForm();
+            if (newMember == null) return;
+            newMember.JoinDate = DateTime.Today;
+            if (_memberDb.AddMember(newMember))
+            {
+                clear();
+                LoadTable();
+                errorLabel.Text = @"Member added successfully.";
+            }
+
         }
     }
 }
