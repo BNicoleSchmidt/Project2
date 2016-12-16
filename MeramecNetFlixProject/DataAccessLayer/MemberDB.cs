@@ -64,8 +64,8 @@ namespace MeramecNetFlixProject.DataAccessLayer
 
         public bool AddMember(Member member)
         {
-            const string sqlStatement = "Insert into Member (joindate, firstname, lastname, address, city, state, zipcode, phone, member_status, login_name, password, email, contact_method, subscription_id, photo, is_admin) values " +
-                                        "(@joindate, @firstname, @lastname, @address, @city, @state, @zipcode, @phone, @member_status, @login_name, @password, @email, @contact_method, @subscription_id, @photo, @is_admin)";
+            const string sqlStatement = "Insert into Member (joindate, firstname, lastname, address, city, state, zipcode, phone, member_status, login_name, password, email, contact_method, subscription_id, is_admin) values " +
+                                        "(@joindate, @firstname, @lastname, @address, @city, @state, @zipcode, @phone, @member_status, @login_name, @password, @email, @contact_method, @subscription_id, @is_admin)";
             return DoNonQuery(member, sqlStatement);
         }
 
@@ -73,7 +73,7 @@ namespace MeramecNetFlixProject.DataAccessLayer
         {
             const string sqlStatement = "Update Member set joindate=@joindate, firstname=@firstname, lastname=@lastname, address=@address, city=@city, " +
                                         "state=@state, zipcode=@zipcode, phone=@phone, member_status=@member_status, login_name=@login_name, password=@password, email=@email, " +
-                                        "contact_method=@contact_method, subscription_id=@subscription_id, photo=@photo, is_admin=@is_admin where id=@id";
+                                        "contact_method=@contact_method, subscription_id=@subscription_id, is_admin=@is_admin where id=@id";
             return DoNonQuery(member, sqlStatement);
         }
 
@@ -130,7 +130,6 @@ namespace MeramecNetFlixProject.DataAccessLayer
                 com.Parameters.AddWithValue("@email", member.Email);
                 com.Parameters.AddWithValue("@contact_method", member.ContactMethod);
                 com.Parameters.AddWithValue("@subscription_id", member.SubscriptionId);
-                com.Parameters.AddWithValue("@photo", member.Photo);
                 com.Parameters.AddWithValue("@is_admin", member.IsAdmin);
                 return NonQuery(com);
             }
