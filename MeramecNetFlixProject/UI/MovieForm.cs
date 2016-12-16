@@ -57,9 +57,9 @@ namespace MeramecNetFlixProject.UI
 
         private void btnMovieAdd_Click(object sender, EventArgs e)
         {
-            var movie = ValidateForm();
-            if (movie == null) return;
-            if (_movieDb.AddMovie(movie))
+            _currentMovie = ValidateForm();
+            if (_currentMovie == null) return;
+            if (_movieDb.AddMovie(_currentMovie))
             {
                 Clear();
                 LoadTable();
@@ -186,6 +186,7 @@ namespace MeramecNetFlixProject.UI
             if (_movieDb.DeleteMovie(id))
             {
                 errorLabel.Text = "Movie " + id + " deleted successfully.";
+                LoadTable();
                 return;
             }
             errorLabel.Text = "Could not delete Movie " + id + ".";
@@ -220,8 +221,34 @@ namespace MeramecNetFlixProject.UI
             txtImageName.Text = _currentMovie.Image;
             txtTrailerLink.Text = _currentMovie.Trailer;
             cboGenre.SelectedIndex = _currentMovie.GenreId;
-            cboRating.SelectedValue = _currentMovie.MovieRating;
-            cboMediaType.SelectedValue = _currentMovie.MediaType;
+            cboRating.SelectedIndex = _currentMovie.MovieRating == "G" ? 0 
+                : _currentMovie.MovieRating == "PG" ? 1 
+                : _currentMovie.MovieRating == "PG - 13" ? 2 
+                : _currentMovie.MovieRating == "R" ? 3 
+                : _currentMovie.MovieRating == "NC - 17" ? 4 : 5;
+            cboMediaType.SelectedIndex = _currentMovie.MediaType == "DVD" ? 0 
+                : _currentMovie.MediaType == "Digital" ? 1 
+                : _currentMovie.MediaType == "Blu-ray" ? 2 : 3;
+        }
+
+        private void btnMovieUpdate_Click(object sender, EventArgs e)
+        {
+            _currentMovie = ValidateForm();
+            if (_currentMovie == null) return;
+            int id;
+            if (!int.TryParse(txtMovieNumber.Text, out id) || id == 0)
+            {
+                errorLabel.Text = @"Enter valid Movie Number.";
+                return;
+            }
+            _currentMovie.Id = id;
+            if (_movieDb.UpdateMovie(_currentMovie))
+            {
+                errorLabel.Text = "Movie " + id + " updated successfully.";
+                LoadTable();
+                return;
+            }
+            errorLabel.Text = "Movie update failed.";
         }
     }
 }
