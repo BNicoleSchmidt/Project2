@@ -23,7 +23,7 @@ namespace MeramecNetFlixProject.UI
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MemberDataEntry member = new MemberDataEntry();
+            MemberDataEntry member = new MemberDataEntry("signup");
             member.ShowDialog();
         }
 

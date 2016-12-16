@@ -17,7 +17,20 @@ namespace MeramecNetFlixProject.UI
             InitializeComponent();
             _memberDb = new MemberDB();
             _currentMember = new Member();
+            txtJoinDate.Enabled = false;
             LoadTable();
+        }
+
+        public MemberDataEntry(string signup)
+        {
+            InitializeComponent();
+            _memberDb = new MemberDB();
+            _currentMember = new Member();
+            txtMemberNumber.Enabled = false;
+            txtJoinDate.Enabled = false;
+            btnMemberBrowse.Enabled = false;
+            btnMemberUpdate.Enabled = false;
+            btnMemberDelete.Enabled = false;
         }
 
         public MemberDataEntry(Member currentMember)
